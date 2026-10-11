@@ -1,0 +1,88 @@
+---
+import { company, products, whatsappLink } from "../data/site";
+
+interface Props {
+  selected?: string;
+}
+
+const { selected } = Astro.props;
+const whatsappNumber = company.whatsapp;
+---
+
+<form class="form card" data-inquiry-form style="padding: 28px;">
+  <div class="form-success">
+    Thank you. Your inquiry is ready to send. If WhatsApp or email did not open, write us at {company.email}.
+  </div>
+  <div class="form-fields">
+    <p class="kicker">Inquiry</p>
+    <h3>Request specifications & pricing</h3>
+    <p class="muted">Share your destination market and target volume. We reply within one business day.</p>
+    <div class="form-row">
+      <label>
+        Full name
+        <input type="text" name="name" required autocomplete="name" />
+      </label>
+      <label>
+        Company
+        <input type="text" name="company" required autocomplete="organization" />
+      </label>
+    </div>
+    <div class="form-row">
+      <label>
+        Email
+        <input type="email" name="email" required autocomplete="email" />
+      </label>
+      <label>
+        Country / market
+        <input type="text" name="country" required />
+      </label>
+    </div>
+    <div class="form-row">
+      <label>
+        Product
+        <select name="product">
+          {products.map((item) => (
+            <option value={item.name} selected={selected === item.slug}>
+              {item.name}
+            </option>
+          ))}
+          <option value="Mixed / other">Mixed / other</option>
+        </select>
+      </label>
+      <label>
+        Quantity (kg or FCL)
+        <input type="text" name="quantity" placeholder="e.g. 5 MT or 1x40HQ" />
+      </label>
+    </div>
+    <label>
+      Message
+      <textarea name="message" placeholder="Specs, packing, destination port, documents needed..."></textarea>
+    </label>
+    <p class="form-note">No backend is required. Submit opens WhatsApp with your details; you can also email {company.email}.</p>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <button class="btn btn-primary" type="submit">Send via WhatsApp</button>
+      <a class="btn btn-gold" href={whatsappLink()} target="_blank" rel="noopener noreferrer">Chat now</a>
+    </div>
+  </div>
+</form>
+
+<script define:vars={{ whatsappNumber }}>
+  const form = document.querySelector("[data-inquiry-form]");
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const lines = [
+      "Hello Dingtai Food, I would like to inquire:",
+      `Name: ${data.get("name")}`,
+      `Company: ${data.get("company")}`,
+      `Email: ${data.get("email")}`,
+      `Country: ${data.get("country")}`,
+      `Product: ${data.get("product")}`,
+      `Quantity: ${data.get("quantity") || "TBD"}`,
+      `Message: ${data.get("message") || "Please send specs and CIF/FOB quote."}`,
+    ];
+    const text = encodeURIComponent(lines.join("\n"));
+    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank", "noopener");
+    form.classList.add("is-sent");
+  });
+</script>

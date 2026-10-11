@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import { products } from "../data/site";
+---
+
+<Layout
+  title="Products"
+  description="Dried ginger slices, ginger powder, and organic ginger from Luoping, Yunnan."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Products</p>
+      <h1>Luoping ginger, specified for industrial buyers.</h1>
+      <p>
+        Choose a form, then send cut size, mesh, moisture, and packing. Custom private-label packing is available
+        for established programs.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap grid-3">
+      {products.map((product) => (
+        <ProductCard product={product} />
+      ))}
+    </div>
+  </section>
+</Layout>

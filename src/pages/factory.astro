@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { company, factoryStats } from "../data/site";
+
+const steps = [
+  { n: "01", title: "Contracted farms", text: "Luoping small yellow ginger from highland plots with harvest windows tracked by lot." },
+  { n: "02", title: "Wash & sort", text: "Soil removal, trimming, and optical / manual sorting before slicing." },
+  { n: "03", title: "Dry & mill", text: "Sun yards plus AD tunnels; closed milling with sieving and metal detection." },
+  { n: "04", title: "Pack & load", text: "Export cartons or kraft bags, palletized, with COA attached to each lot." },
+];
+---
+
+<Layout
+  title="Factory"
+  description="Processing capacity, planting base, and quality control of Dingtai Food in Luoping, Yunnan."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Factory strength</p>
+      <h1>From field lots to export cartons in one county.</h1>
+      <p>
+        Our plant sits in Luoping’s food industrial park, next to the ginger belt. Short inbound logistics keep
+        rhizomes fresh and drying schedules predictable.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="stats" style="margin-top: 0;">
+        {factoryStats.map((item) => (
+          <div class="stat">
+            <b>{item.value}</b>
+            <span class="muted">{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap grid-2">
+      <img
+        class="card"
+        src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80"
+        alt="Export warehouse"
+      />
+      <div>
+        <p class="kicker">Capability</p>
+        <h2>Lines designed for spice and dehydrated vegetable buyers.</h2>
+        <p>
+          Washing, slicing, drying, grinding, and packing run as separate rooms with pest control and metal
+          detection. A QC lab checks moisture, granulation, sensory, and basic micro before release.
+        </p>
+        <p>
+          {company.legalName} has supplied bulk ginger to Asia, the Middle East, Europe, and North America since {company.founded}.
+        </p>
+        <a class="btn btn-primary" href="/certificates">Review certificates</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--paper-2);">
+    <div class="wrap">
+      <p class="kicker">Process</p>
+      <h2>Traceable lots, repeatable specs.</h2>
+      <div class="process">
+        {steps.map((step) => (
+          <article class="process-item">
+            <span>{step.n}</span>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

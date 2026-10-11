@@ -1,0 +1,19 @@
+---
+import type { products } from "../data/site";
+
+interface Props {
+  product: (typeof products)[number];
+}
+
+const { product } = Astro.props;
+---
+
+<article class="card">
+  <img src={product.heroImage} alt={product.name} loading="lazy" />
+  <div class="card-body">
+    <p class="kicker">{product.category}</p>
+    <h3>{product.name}</h3>
+    <p>{product.summary}</p>
+    <a class="btn btn-primary" href={`/products/${product.slug}`}>View specifications</a>
+  </div>
+</article>

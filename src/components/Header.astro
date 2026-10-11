@@ -1,0 +1,37 @@
+---
+import { nav } from "../data/site";
+
+const path = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/">
+      <svg width="36" height="36" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="12" fill="#16382C"></rect>
+        <path d="M18 40c6-14 14-20 28-22-8 8-10 16-8 26-10-2-16-2-20-4Z" fill="#C9A15A"></path>
+      </svg>
+      <div>
+        <strong>Dingtai</strong>
+        <span>Luoping Ginger</span>
+      </div>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" data-menu-toggle>
+      Menu
+    </button>
+    <nav class="nav" data-nav>
+      {nav.map((item) => (
+        <a href={item.href} aria-current={path === item.href ? "page" : undefined}>
+          {item.label}
+        </a>
+      ))}
+      <a class="btn btn-primary" href="/contact">Request a quote</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector("[data-menu-toggle]");
+  const nav = document.querySelector("[data-nav]");
+  toggle?.addEventListener("click", () => nav?.classList.toggle("is-open"));
+</script>

@@ -1,0 +1,29 @@
+---
+import { company, nav } from "../data/site";
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3 style="color:#fff;">{company.shortName}</h3>
+        <p>{company.legalName}</p>
+        <p>Specialist exporter of Luoping small yellow ginger — dried slices, powder, and organic grades.</p>
+      </div>
+      <div>
+        <h3 style="color:#fff;">Explore</h3>
+        {nav.map((item) => (
+          <p><a href={item.href}>{item.label}</a></p>
+        ))}
+      </div>
+      <div>
+        <h3 style="color:#fff;">Export office</h3>
+        <p>{company.address}</p>
+        <p><a href={`mailto:${company.email}`}>{company.email}</a></p>
+        <p>{company.phone}</p>
+        <p>{company.hours}</p>
+      </div>
+    </div>
+    <p class="muted">© {new Date().getFullYear()} {company.legalName} All rights reserved.</p>
+  </div>
+</footer>

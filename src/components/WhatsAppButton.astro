@@ -1,0 +1,17 @@
+---
+import { company, whatsappLink } from "../data/site";
+---
+
+<a
+  class="wa-float"
+  href={whatsappLink()}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`Chat with ${company.shortName} on WhatsApp`}
+>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path
+      d="M20 11.5A8.5 8.5 0 0 1 7.2 18.4L4 20l1.7-3.1A8.5 8.5 0 1 1 20 11.5Zm-8.5 6.7c1.3 0 2.6-.3 3.7-1l.3-.2 2.2.6-.6-2.1.2-.3a6.7 6.7 0 1 0-5.8 3Zm3.7-5c-.2-.1-1.2-.6-1.4-.6s-.3 0-.5.3c-.2.3-.6.6-.7.8s-.3.2-.5.1a5.5 5.5 0 0 1-1.6-1 6 6 0 0 1-1.1-1.4c-.1-.2 0-.3.1-.4l.3-.3.2-.3c.1-.1 0-.3 0-.4l-.5-1.2c-.1-.3-.3-.3-.5-.3h-.4c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.3c.1.2 1.6 2.6 4 3.5 2.4.9 2.4.6 2.8.6.4 0 1.3-.5 1.5-1.1.2-.5.2-1 .1-1.1 0-.1-.2-.2-.4-.3Z"
+    ></path>
+  </svg>
+</a>

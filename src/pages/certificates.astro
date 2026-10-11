@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { certificates } from "../data/site";
+---
+
+<Layout
+  title="Certificates"
+  description="HACCP, ISO 22000, organic, HALAL, Kosher, and FDA facility registration for Dingtai ginger exports."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Compliance</p>
+      <h1>Documents your customs broker and QA team expect.</h1>
+      <p>
+        Scanned certificates and the latest audit dates are sent with quotations. Organic status is SKU-specific —
+        ask before booking a mix container.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap cert-grid">
+      {certificates.map((item) => (
+        <article class="cert-card">
+          <div class="cert-badge">{item.code}</div>
+          <h3>{item.name}</h3>
+          <p>{item.scope}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap card" style="padding: 28px;">
+      <p class="kicker">Shipment file</p>
+      <h2>Typical document set</h2>
+      <p>
+        Commercial invoice, packing list, certificate of origin (Form A / general), phytosanitary certificate,
+        bill of lading, and certificate of analysis. Health certificate, HALAL, or organic transaction certificate
+        can be added by destination.
+      </p>
+      <a class="btn btn-primary" href="/contact">Request copies</a>
+    </div>
+  </section>
+</Layout>

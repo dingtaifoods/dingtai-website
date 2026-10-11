@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import InquiryForm from "../components/InquiryForm.astro";
+import { company, whatsappLink } from "../data/site";
+---
+
+<Layout
+  title="Contact"
+  description="Contact Yunnan Luoping Dingtai Food for ginger export quotations, samples, and documents."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Contact</p>
+      <h1>Export desk for samples, COA, and container quotes.</h1>
+      <p>WhatsApp is the fastest channel during China working hours. Email is copied on every formal offer.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap grid-2" style="align-items: start;">
+      <div>
+        <h2>Office</h2>
+        <p>{company.legalName}</p>
+        <p>{company.address}</p>
+        <p><a href={`mailto:${company.email}`}>{company.email}</a></p>
+        <p>{company.phone}</p>
+        <p>WeChat: {company.wechat}</p>
+        <p>{company.hours}</p>
+        <a class="btn btn-gold" href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+          WhatsApp export sales
+        </a>
+      </div>
+      <InquiryForm />
+    </div>
+  </section>
+</Layout>
