@@ -32,8 +32,8 @@ export const products = [
     heroImage:
       "/images/dried-ginger-slices.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=900&q=80",
+      "/images/dried-ginger-slices.jpg",
+      "/images/dried-ginger-slices.jpg",
     ],
     highlights: ["AD / sun-dried", "3–8 mm cut", "Moisture ≤ 12%", "Export cartons"],
     specs: [
@@ -64,8 +64,8 @@ export const products = [
     heroImage:
       "/images/ginger-powder.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1506368248148-2c5580a57e0b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1606914506374-86834187fbbd?auto=format&fit=crop&w=900&q=80",
+      "/images/ginger-powder.jpg",
+      "/images/ginger-powder.jpg",
     ],
     highlights: ["80–120 mesh", "Steam sterilized", "Low ash", "Metal detected"],
     specs: [
@@ -88,35 +88,32 @@ export const products = [
     ],
   },
   {
-    slug: "organic-ginger",
-    name: "Organic Ginger",
-    category: "Certified organic",
+    slug: "dried-chili-star-anise",
+    name: "Dried Chili & Star Anise",
+    category: "Spices & Seasonings",
     summary:
-      "Organically grown Luoping ginger from contracted highland plots. Available as fresh, dried slices, or powder, with EU / USDA organic documentation on request.",
+      "High-quality dried chili and star anise from Yunnan. Rich aroma, consistent color, and strict quality control for global food and seasoning manufacturers.",
     heroImage:
-      "/images/organic-ginger.jpg",
+      "/images/dried-chili-star-anise.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80",
+      "/images/dried-chili-star-anise.jpg",
+      "/images/dried-chili-star-anise.jpg",
     ],
-    highlights: ["EU / USDA organic", "Traceable plots", "No synthetic pesticide", "Lot COA"],
+    highlights: ["Yunnan origin", "Rich aroma", "Low moisture", "Export grade"],
     specs: [
-      ["Origin", "Certified organic bases, Luoping, Yunnan"],
-      ["Forms", "Fresh / dried slices / powder"],
-      ["Certification", "EU Organic, USDA NOP (on request)"],
-      ["Residue", "Compliant with destination MRL"],
-      ["Traceability", "Plot code to finished lot"],
-      ["Harvest", "Main crop Nov–Feb"],
-      ["Packing", "Carton / mesh bag / kraft, buyer spec"],
-      ["MOQ", "Discuss by form and destination"],
-      ["Documents", "Certificate, invoice, packing list, COA, phytosanitary"],
-      ["Shelf life", "Fresh: by cold-chain; dried: 18–24 months"],
+      ["Origin", "Yunnan, China"],
+      ["Product", "Dried Chili & Star Anise"],
+      ["Moisture", "≤ 12%"],
+      ["Color", "Natural red / brown"],
+      ["Packing", "10 kg / 20 kg carton or as buyer request"],
+      ["MOQ", "500 kg trial / 1 FCL preferred"],
+      ["Shelf life", "18–24 months in cool, dry storage"],
     ],
     applications: [
-      "Organic retail brands",
-      "Natural tea houses",
-      "Clean-label food manufacturers",
-      "Supplement brands requiring organic input",
+      "Spice blends and seasoning",
+      "Ready-meal and sauce plants",
+      "Catering and food service",
+      "Retail private-label packs",
     ],
   },
 ] as const;
