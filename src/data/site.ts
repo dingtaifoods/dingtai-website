@@ -30,7 +30,7 @@ export const products = [
     summary:
       "Sun-dried and AD-dried slices of Luoping small yellow ginger. Clean aroma, low fiber, stable moisture for tea, seasoning, and extract plants.",
     heroImage:
-      "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=1400&q=80",
+      "/images/dried-ginger-slices.jpg",
     gallery: [
       "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=900&q=80",
@@ -62,7 +62,7 @@ export const products = [
     summary:
       "Fine, steam-sterilized powder milled from Luoping small yellow ginger. Consistent mesh, warm pungency, suitable for food, beverage, and nutraceutical use.",
     heroImage:
-      "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1400&q=80",
+      "/images/ginger-powder.jpg",
     gallery: [
       "https://images.unsplash.com/photo-1506368248148-2c5580a57e0b?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1606914506374-86834187fbbd?auto=format&fit=crop&w=900&q=80",
@@ -94,7 +94,7 @@ export const products = [
     summary:
       "Organically grown Luoping ginger from contracted highland plots. Available as fresh, dried slices, or powder, with EU / USDA organic documentation on request.",
     heroImage:
-      "https://images.unsplash.com/photo-1638613061776-04e0e0d1b0d4?auto=format&fit=crop&w=1400&q=80",
+      "/images/organic-ginger.jpg",
     gallery: [
       "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80",
