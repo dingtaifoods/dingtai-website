@@ -7,15 +7,12 @@ const path = Astro.url.pathname;
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="logo" href="/">
-      <svg width="36" height="36" viewBox="0 0 64 64" aria-hidden="true">
-        <rect width="64" height="64" rx="12" fill="#16382C"></rect>
-        <path d="M18 40c6-14 14-20 28-22-8 8-10 16-8 26-10-2-16-2-20-4Z" fill="#C9A15A"></path>
-      </svg>
+      < img src="/images/dingtai-logo.jpg" alt="Dingtai Food Logo" style="height: 36px; width: auto;" />
       <div>
         <strong>Dingtai</strong>
         <span>Luoping Ginger</span>
       </div>
-    </a>
+    </a >
     <button class="menu-toggle" type="button" aria-label="Open menu" data-menu-toggle>
       Menu
     </button>
@@ -23,9 +20,9 @@ const path = Astro.url.pathname;
       {nav.map((item) => (
         <a href={item.href} aria-current={path === item.href ? "page" : undefined}>
           {item.label}
-        </a>
+        </a >
       ))}
-      <a class="btn btn-primary" href="/contact">Request a quote</a>
+      <a class="btn btn-primary" href="/contact">Request a quote</a >
     </nav>
   </div>
 </header>
