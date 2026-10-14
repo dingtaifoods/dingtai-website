@@ -120,34 +120,34 @@ export const products = [
 
 export const certificates = [
   {
-    code: "HACCP",
-    name: "HACCP",
-    scope: "Hazard analysis for ginger processing and packing",
-  },
-  {
-    code: "ISO",
-    name: "ISO 22000",
-    scope: "Food safety management system",
-  },
-  {
-    code: "ORG",
-    name: "Organic",
-    scope: "EU Organic / USDA NOP (product-dependent)",
-  },
-  {
-    code: "HLAL",
-    name: "HALAL",
-    scope: "Halal-compliant process and ingredients",
-  },
-  {
-    code: "KSHR",
-    name: "Kosher",
-    scope: "Kosher certification for selected SKUs",
-  },
-  {
     code: "FDA",
     name: "FDA Facility",
-    scope: "U.S. FDA food facility registration",
+    scope: "U.S. FDA food facility registration and compliance",
+  },
+  {
+    code: "FSSC",
+    name: "FSSC 22000",
+    scope: "GFSI-recognized food safety system certification",
+  },
+  {
+    code: "HACCP",
+    name: "HACCP",
+    scope: "Hazard analysis and critical control points for food safety",
+  },
+  {
+    code: "EUORG",
+    name: "EU Organic",
+    scope: "Compliant with EU organic standards for ginger products",
+  },
+  {
+    code: "USDA",
+    name: "USDA Organic",
+    scope: "Meets USDA National Organic Program standards",
+  },
+  {
+    code: "KOFK",
+    name: "Kosher (KOF-K)",
+    scope: "Kosher-certified production processes for selected SKUs",
   },
 ];
 
