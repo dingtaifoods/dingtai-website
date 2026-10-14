@@ -88,6 +88,34 @@ export const products = [
     ],
   },
   {
+    slug: "ginger-granules",
+    name: "Ginger Granules",
+    category: "Processed Ginger",
+    summary:
+      "Convenient and easy to use ginger granules, made from premium Luoping small yellow ginger. Ideal for tea, beverages, and instant food seasoning.",
+    heroImage: "/images/ginger-granules.jpg",
+    gallery: [
+      "/images/ginger-granules.jpg",
+      "/images/ginger-granules.jpg",
+    ],
+    highlights: ["Pure ginger", "Easy to dissolve", "Rich aroma", "Export packing"],
+    specs: [
+      ["Origin", "Luoping, Yunnan, China"],
+      ["Product", "Ginger Granules"],
+      ["Moisture", "≤ 10%"],
+      ["Granule size", "Customizable (e.g., 8-20 mesh)"],
+      ["Packing", "10 kg / 20 kg carton or buyer request"],
+      ["MOQ", "500 kg trial / 1 FCL preferred"],
+      ["Shelf life", "18–24 months in cool, dry storage"],
+    ],
+    applications: [
+      "Instant ginger tea",
+      "Beverage and food seasoning",
+      "Health food and supplements",
+      "Retail private-label packs",
+    ],
+  },
+  {
     slug: "dried-chili-star-anise",
     name: "Dried Chili & Star Anise",
     category: "Spices & Seasonings",
