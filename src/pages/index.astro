@@ -13,14 +13,14 @@ import { company, factoryStats, products } from "../data/site";
       alt="Highland farmland in Yunnan"
     />
     <div class="wrap hero-copy">
-      <p class="kicker">Luoping · Yunnan · China</p>
+      <p class="kicker">Luoping · Yunnan · China</p >
       <h1>Premium Dried Ginger &amp; Spices from Yunnan</h1>
       <p>
         Direct factory supplier of dried ginger slices, powder, chili, and star anise. We serve importers, tea blenders, and food manufacturers worldwide.
-      </p>
+      </p >
       <div class="hero-actions">
-        <a class="btn btn-gold" href="/products">Browse products</a>
-        <a class="btn btn-ghost" href="/contact">Talk to export sales</a>
+        <a class="btn btn-gold" href="/products">Browse products</a >
+        <a class="btn btn-ghost" href="/contact">Talk to export sales</a >
       </div>
     </div>
   </section>
@@ -38,7 +38,7 @@ import { company, factoryStats, products } from "../data/site";
 
   <section class="section">
     <div class="wrap">
-      <p class="kicker">Why Luoping ginger</p>
+      <p class="kicker">Why Luoping ginger</p >
       <div class="grid-2">
         <div>
           <h2>A protected origin with a sharp, clean pungency.</h2>
@@ -46,12 +46,12 @@ import { company, factoryStats, products } from "../data/site";
             Luoping’s small yellow ginger is grown on red-soil highlands with a long dry season. The rhizomes are
             compact, low in fiber, and rich in essential oil — preferred by tea and extract buyers over larger
             commercial types.
-          </p>
+          </p >
           <p>
             We contract farms around our plant, wash and slice in-house, and dry with both sun yards and air-dryer
             lines so moisture, color, and SO2 stay inside your spec.
-          </p>
-          <a class="btn btn-primary" href="/factory">See factory capability</a>
+          </p >
+          <a class="btn btn-primary" href="/factory">See factory capability</a >
         </div>
         <img
           class="card"
@@ -64,9 +64,9 @@ import { company, factoryStats, products } from "../data/site";
 
   <section class="section" style="background: var(--paper-2);">
     <div class="wrap">
-      <p class="kicker">Core range</p>
+      <p class="kicker">Core range</p >
       <h2>Explore Our Export Range</h2>
-      <div class="grid-4">
+      <div class="grid-4" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
         {products.map((product) => (
           <ProductCard product={product} />
         ))}
@@ -77,13 +77,13 @@ import { company, factoryStats, products } from "../data/site";
   <section class="section">
     <div class="wrap grid-2">
       <div>
-        <p class="kicker">Documents &amp; shipping</p>
+        <p class="kicker">Documents &amp; shipping</p >
         <h2>Built for overseas procurement teams.</h2>
         <p>
           Commercial invoice, packing list, certificate of origin, phytosanitary certificate, and lot COA are
           prepared with each shipment. Loading is available FOB Shenzhen / Nansha / Shanghai, or CIF to your port.
-        </p>
-        <p>{company.moqNote}</p>
+        </p >
+        <p>{company.moqNote}</p >
       </div>
       <InquiryForm />
     </div>
