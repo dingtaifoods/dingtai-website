@@ -20,8 +20,23 @@ import Layout from "../layouts/Layout.astro";
       <div class="header-cta">
         <a href="#contact" class="btn-cta">Get a Quote</a>
       </div>
+      <!-- 手机端汉堡按钮 -->
+      <div class="mobile-toggle" id="mobile-toggle">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </header>
+
+  <!-- 手机端全屏菜单 -->
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-close" id="mobile-close">&times;</div>
+    <a href="#about" class="m-link">About</a>
+    <a href="/products" class="m-link">Products</a>
+    <a href="#organic" class="m-link">Organic</a>
+    <a href="#dehydrated" class="m-link">Dehydrated</a>
+    <a href="#certifications" class="m-link">Certifications</a>
+    <a href="#contact" class="m-link" style="color:#3A824F; font-weight:bold;">Get a Quote</a>
+  </div>
 
   <!-- ================= 2. 沉浸式首屏 (Hero) ================= -->
   <section class="hero-section">
@@ -101,7 +116,6 @@ import Layout from "../layouts/Layout.astro";
       </div>
 
       <div class="product-grid fade-in">
-        <!-- 👇 加上了 data-product 属性，方便 JS 抓取名字 👇 -->
         <div class="product-card" data-product="Organic Ginger Powder">
           <div class="img-box"><img src="/images/prod-powder.jpg" alt="Bulk organic dried ginger powder 60-80 mesh – EU/USDA organic – Dingtai" /></div>
           <h4>Organic Ginger Powder</h4>
@@ -140,7 +154,6 @@ import Layout from "../layouts/Layout.astro";
       </div>
 
       <div class="product-grid dense fade-in">
-        <!-- 👇 同样加上了 data-product 属性 👇 -->
         <div class="product-card" data-product="Dehydrated Ginger Slices"><div class="img-box"><img src="/images/d-ginger-slices.jpg" alt="Dehydrated ginger slices – HACCP certified, Yunnan China – Dingtai" /></div><h4>Dehydrated Ginger Slices</h4></div>
         <div class="product-card" data-product="Dehydrated Ginger Chunks"><div class="img-box"><img src="/images/d-ginger-chunks.jpg" alt="Dehydrated ginger chunks – HACCP certified, Yunnan China – Dingtai" /></div><h4>Dehydrated Ginger Chunks</h4></div>
         <div class="product-card" data-product="Dried Red Chili"><div class="img-box"><img src="/images/d-ginger-granules.jpg" alt="Dried red chili – HACCP certified, Yunnan China – Dingtai" /></div><h4>Dried Red Chili</h4></div>
@@ -196,12 +209,10 @@ import Layout from "../layouts/Layout.astro";
   <section id="contact" class="contact-section">
     <div class="container">
       <div class="contact-grid fade-in">
-        
         <div class="contact-text">
           <span class="section-tag">Get in Touch</span>
           <h2>Ready to request a quote?</h2>
           <p>Please fill out the form with your specific requirements (Product, Quantity, Destination Port). Our sales team will get back to you within 24 hours.</p>
-          
           <div class="contact-direct">
             <p><strong>Direct WhatsApp:</strong> <a href="https://wa.me/85296946564" target="_blank">+852 9694 6564</a></p>
             <p><strong>Email:</strong> sales@dingtaifoods.com</p>
@@ -210,11 +221,9 @@ import Layout from "../layouts/Layout.astro";
 
         <div class="contact-form-wrap">
           <form id="inquiryForm" class="inquiry-form">
-            
             <input type="hidden" name="access_key" value="ba9c9dc3-26f2-405b-bdcc-cc2da3fbeaba">
             <input type="hidden" name="subject" value="New Website Inquiry from Dingtai Food">
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
             <div class="form-row">
               <input type="text" name="Name" placeholder="Your Name *" required>
               <input type="email" name="Email" placeholder="Your Email *" required>
@@ -224,27 +233,21 @@ import Layout from "../layouts/Layout.astro";
               <input type="text" name="Target Product" placeholder="Target Product">
             </div>
             <textarea name="Message" placeholder="Detailed Requirements (Quantity, Specs, Port)..." rows="4" required></textarea>
-            
             <button type="submit" id="submitBtn" class="btn-submit">Send Inquiry</button>
           </form>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ================= 9. 唯一的高级三列页脚（已与 products.astro 统一） ================= -->
+  <!-- ================= 9. 页脚 ================= -->
   <footer class="global-footer">
     <div class="container footer-grid">
-      
-      <!-- 第一列：带有 Logo -->
       <div class="footer-col brand-col">
         <img src="/images/logo-white.png" alt="Dingtai Food" class="footer-logo">
         <h4>Yunnan Luoping Dingtai Food Development Co., Ltd.</h4>
         <p>Specialist exporter of Luoping small yellow ginger — dried slices, powder, and organic grades.</p>
       </div>
-
-      <!-- 第二列：快速导航 -->
       <div class="footer-col">
         <h4 class="footer-title">Explore</h4>
         <ul class="footer-links">
@@ -255,8 +258,6 @@ import Layout from "../layouts/Layout.astro";
           <li><a href="/#contact">Contact</a></li>
         </ul>
       </div>
-
-      <!-- 第三列：联系信息 -->
       <div class="footer-col">
         <h4 class="footer-title">Export Office</h4>
         <div class="footer-contact">
@@ -266,10 +267,7 @@ import Layout from "../layouts/Layout.astro";
           <p>Mon–Sat, 08:30–18:00 CST (UTC+8)</p>
         </div>
       </div>
-
     </div>
-    
-    <!-- 底部版权 -->
     <div class="container footer-bottom">
       <p>&copy; 2025 Yunnan Luoping Dingtai Food Development Co., Ltd. All rights reserved.</p>
     </div>
@@ -279,21 +277,17 @@ import Layout from "../layouts/Layout.astro";
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
-
   :global(.site-header) { display: none; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { overflow-x: hidden; font-family: 'Inter', sans-serif; color: #333; background: #fff; -webkit-font-smoothing: antialiased; }
   h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
-
   .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
   .bg-light { background-color: #FAFAFA; }
-
-  /* 动画类 */
   .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-  /* 1. 导航 */
+  /* 1. 导航与手机菜单 */
   .global-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 25px 0; transition: 0.4s; }
   .global-header.scrolled { background: #fff; padding: 15px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
   .header-wrap { max-width: 1400px; margin: 0 auto; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; }
@@ -304,6 +298,15 @@ import Layout from "../layouts/Layout.astro";
   .main-nav a:hover { color: #D4AF37; }
   .btn-cta { background: #3A824F; color: #fff; padding: 12px 30px; text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; border-radius: 2px; transition: 0.3s; }
   .btn-cta:hover { background: #2c663d; }
+  
+  /* 手机汉堡按钮与全屏菜单 */
+  .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; z-index: 1001; }
+  .mobile-toggle span { width: 25px; height: 2px; background: #fff; transition: 0.3s; }
+  .global-header.scrolled .mobile-toggle span { background: #333; }
+  .mobile-nav { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: #fff; z-index: 999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.4s; }
+  .mobile-nav.active { right: 0; }
+  .mobile-nav a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #0A1C13; margin: 15px 0; text-transform: uppercase; text-decoration: none; }
+  .mobile-close { position: absolute; top: 20px; right: 25px; font-size: 3rem; color: #333; cursor: pointer; line-height: 1; }
 
   /* 2. 首屏 */
   .hero-section { position: relative; height: 100vh; width: 100%; display: flex; align-items: center; overflow: hidden; }
@@ -311,7 +314,6 @@ import Layout from "../layouts/Layout.astro";
   .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease-in-out; }
   .hero-bg.active { opacity: 1; transform: scale(1.05); transition: opacity 1.5s ease-in-out, transform 8s linear; }
   .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(10,28,19,0.8) 0%, rgba(10,28,19,0.2) 100%); z-index: 2; }
-  
   .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: 0 auto; padding: 0 5%; width: 100%; padding-top: 80px; }
   .hero-subtitle { display: block; color: #D4AF37; font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 25px; font-weight: 600; }
   .hero-title { font-size: 5rem; color: #fff; line-height: 1.1; margin-bottom: 30px; }
@@ -319,7 +321,7 @@ import Layout from "../layouts/Layout.astro";
   .hero-actions { display: flex; gap: 20px; }
   .btn-primary { background: #3A824F; color: #fff; padding: 18px 45px; text-decoration: none; font-weight: 600; letter-spacing: 1px; border-radius: 2px; transition: 0.3s; }
   .btn-primary:hover { background: #2c663d; }
-  .btn-secondary { background: transparent; border: 1px solid #fff; color: #fff; padding: 18px 45px; text-decoration: none; font-weight: 600; letter-spacing: 1px; border-radius: 2px; transition: 0.3s; }
+  .btn-secondary { background: transparent; border: 1px solid #fff; color: #fff; padding: 18px 45px; text-decoration: none; font-weight: 600; letter-spacing: 1px; border-radius: 2px; transition: 0.3s; text-align: center; }
   .btn-secondary:hover { background: #fff; color: #0A1C13; }
 
   /* 3. 品牌宣言 */
@@ -335,7 +337,6 @@ import Layout from "../layouts/Layout.astro";
   .about-text p { color: #666; font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; }
   .about-text strong { color: #0A1C13; font-weight: 600; }
   .about-image img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
-
   .stats-row { display: flex; gap: 50px; margin-top: 40px; padding-top: 40px; border-top: 1px solid #eee; }
   .stat-item { display: flex; flex-direction: column; }
   .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #3A824F; line-height: 1; }
@@ -346,20 +347,16 @@ import Layout from "../layouts/Layout.astro";
   .section-header { text-align: center; max-width: 700px; margin: 0 auto 80px; }
   .section-header h2 { font-size: 3.2rem; color: #0A1C13; margin-bottom: 15px; }
   .section-header p { color: #666; font-size: 1.05rem; }
-  
-  .organic-logos { display: flex; justify-content: center; gap: 25px; margin-top: 40px; }
+  .organic-logos { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 40px; }
   .icon-eu { height: 45px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); transition: 0.3s; position: relative; top: 0px; left: 0px; }
-  .icon-usda { height: 70px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); transition: 0.3s; position: relative; top: -10px; left: 18px; }
-  .icon-china { height: 78px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); transition: 0.3s; position: relative; top: -12px; left: 18px; }
+  .icon-usda { height: 70px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); transition: 0.3s; position: relative; top: -10px; left: 0px; }
+  .icon-china { height: 78px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); transition: 0.3s; position: relative; top: -12px; left: 0px; }
   .icon-jas { height: 80px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); transition: 0.3s; position: relative; top: -15px; left: 0px; }
   .icon-eu:hover, .icon-usda:hover, .icon-china:hover, .icon-jas:hover { transform: translateY(-5px); }
 
   .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px 30px; }
   .product-grid.dense { grid-template-columns: repeat(3, 1fr); gap: 30px; }
-  
-  /* 👇 鼠标悬停变成小手，增加点击欲望 👇 */
   .product-card { background: #fff; text-align: center; transition: 0.4s; border-radius: 4px; padding-bottom: 20px; cursor: pointer; }
-  
   .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
   .img-box { width: 100%; aspect-ratio: 1/1; border-radius: 4px; overflow: hidden; margin-bottom: 20px; background: #FAFAFA; display: flex; justify-content: center; align-items: center; }
   .img-box img { width: 80%; height: 80%; object-fit: contain; transition: 0.4s; }
@@ -386,7 +383,7 @@ import Layout from "../layouts/Layout.astro";
   .cert-logo-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-color: #ddd; }
   .cert-logo-card img { width: 100%; height: auto; max-height: 160px; object-fit: contain; }
 
-  /* ================= 8. 全新极简询盘表单 ================= */
+  /* 8. 询盘表单 */
   .contact-section { padding: 120px 0; background: #F4F7F5; }
   .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 100px; }
   .contact-text h2 { font-size: 3rem; color: #0A1C13; margin-bottom: 25px; line-height: 1.1; }
@@ -395,7 +392,6 @@ import Layout from "../layouts/Layout.astro";
   .contact-direct strong { color: #0A1C13; }
   .contact-direct a { color: #3A824F; text-decoration: none; font-weight: 600; border-bottom: 1px solid #3A824F; transition: 0.3s; }
   .contact-direct a:hover { color: #2c663d; }
-
   .contact-form-wrap { background: #fff; padding: 50px; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
   .inquiry-form { display: flex; flex-direction: column; gap: 25px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
@@ -405,46 +401,60 @@ import Layout from "../layouts/Layout.astro";
   .btn-submit { background: #3A824F; color: #fff; padding: 18px 40px; font-size: 1rem; font-weight: 600; letter-spacing: 1px; border: none; border-radius: 2px; cursor: pointer; transition: 0.3s; margin-top: 10px; }
   .btn-submit:hover { background: #2c663d; }
 
-  /* ================= 9. 高级三列页脚（与 products.astro 完全一致） ================= */
+  /* 9. 页脚 */
   .global-footer { padding: 80px 0 30px; background: #0A1C13; color: #A3B19B; border-top: 1px solid rgba(255,255,255,0.05); }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 60px; margin-bottom: 60px; }
-  
   .footer-logo { height: 45px; margin-bottom: 20px; opacity: 1; }
   .brand-col h4 { color: #fff; font-size: 1.2rem; margin-bottom: 15px; font-family: 'Inter', sans-serif; font-weight: 500; }
   .brand-col p { font-size: 0.95rem; line-height: 1.6; color: #A3B19B; max-width: 350px; }
-
   .footer-title { color: #fff; font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; margin-bottom: 20px; letter-spacing: 1px; }
   .footer-links { list-style: none; }
   .footer-links li { margin-bottom: 12px; }
   .footer-links a { color: #A3B19B; text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
   .footer-links a:hover { color: #3A824F; }
-
   .footer-contact p { font-size: 0.95rem; line-height: 1.8; margin-bottom: 12px; color: #A3B19B; }
   .footer-contact a { color: #A3B19B; text-decoration: none; transition: 0.3s; }
   .footer-contact a:hover { color: #3A824F; }
-
   .footer-bottom { text-align: left; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; }
   .footer-bottom p { font-size: 0.85rem; color: #6B7B72; }
 
-  /* 响应式 */
+  /* ================= 手机端专门优化 ================= */
   @media (max-width: 992px) {
+    .hero-section { height: auto; min-height: 100vh; padding: 140px 0 80px; }
     .hero-title { font-size: 3.5rem; }
-    .manifesto-text { font-size: 2rem; }
-    .about-grid, .cert-grid-wrap, .contact-grid { grid-template-columns: 1fr; gap: 60px; }
-    .cert-card { padding: 40px; }
-    .contact-form-wrap { padding: 40px 30px; }
-    .stats-row { justify-content: space-between; }
-    .product-grid, .product-grid.dense { grid-template-columns: repeat(2, 1fr); }
+    .manifesto-text { font-size: 2rem; padding: 0 20px; }
+    .about-section { padding: 80px 0; }
+    .about-grid, .cert-grid-wrap, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .cert-card { padding: 40px 20px; }
+    .contact-form-wrap { padding: 30px 20px; }
+    .stats-row { justify-content: space-between; gap: 20px; }
+    .stat-num { font-size: 2rem; }
+    .product-grid, .product-grid.dense { grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .main-nav { display: none; }
-    .cert-logos-grid { grid-template-columns: repeat(2, 1fr); }
+    .header-cta { display: none; }
+    .mobile-toggle { display: flex; }
+    .cert-logos-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    .section-header { margin-bottom: 40px; }
+    .section-header h2 { font-size: 2.5rem; }
+    .products-section { padding: 80px 0; }
   }
+
   @media (max-width: 576px) {
-    .hero-title { font-size: 2.8rem; }
-    .hero-actions { flex-direction: column; }
-    .product-grid, .product-grid.dense { grid-template-columns: 1fr; }
-    .cert-logos-grid { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; gap: 25px; }
+    .hero-title { font-size: 2.6rem; }
+    .hero-desc { font-size: 1rem; }
+    .hero-actions { flex-direction: column; gap: 10px; }
+    .btn-primary, .btn-secondary { width: 100%; padding: 15px 20px; }
+    .product-grid, .product-grid.dense { grid-template-columns: repeat(2, 1fr); gap: 15px 10px; }
+    .product-card { padding-bottom: 10px; }
+    .img-box { margin-bottom: 10px; }
+    .product-card h4 { font-size: 0.8rem; line-height: 1.3; }
+    .cert-logos-grid { grid-template-columns: repeat(2, 1fr); }
+    .form-row { grid-template-columns: 1fr; gap: 20px; }
+    .contact-section { padding: 80px 0; }
+    .contact-text h2 { font-size: 2.2rem; }
+    .btn-explore { width: 100%; justify-content: center; font-size: 0.8rem; padding: 15px 10px; }
+    .medal-display img { width: 150px; }
   }
 </style>
 
@@ -459,13 +469,37 @@ import Layout from "../layouts/Layout.astro";
     }
   });
 
+  // 移动端菜单开关
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileClose = document.getElementById('mobile-close');
+  const mLinks = document.querySelectorAll('.m-link');
+
+  if(mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+      mobileNav.classList.add('active');
+    });
+  }
+  if(mobileClose) {
+    mobileClose.addEventListener('click', () => {
+      mobileNav.classList.remove('active');
+    });
+  }
+  mLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('active');
+    });
+  });
+
   // 首屏淡入淡出轮播
   const slides = document.querySelectorAll('.hero-bg');
   let current = 0;
   setInterval(() => {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
+    if(slides.length > 0) {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }
   }, 5000);
 
   // 滚动淡入动画
@@ -481,19 +515,17 @@ import Layout from "../layouts/Layout.astro";
     observer.observe(el);
   });
 
-  // ================= 表单提交逻辑 =================
+  // 表单提交逻辑
   const form = document.getElementById('inquiryForm');
   const submitBtn = document.getElementById('submitBtn');
 
   if (form) {
     form.addEventListener('submit', function(e) {
-      e.preventDefault(); // 阻止页面跳转刷新
-      
+      e.preventDefault(); 
       const formData = new FormData(form);
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
-      
-      submitBtn.innerHTML = "Sending..."; // 按钮变成发送中
+      submitBtn.innerHTML = "Sending...";
       submitBtn.disabled = true;
 
       fetch('https://api.web3forms.com/submit', {
@@ -505,49 +537,37 @@ import Layout from "../layouts/Layout.astro";
           body: json
       })
       .then(async (response) => {
-          let json = await response.json();
           if (response.status == 200) {
-              // 发送成功
               submitBtn.innerHTML = "Inquiry Sent Successfully!";
-              submitBtn.style.backgroundColor = "#28a745"; // 变成绿色
-              form.reset(); // 清空表单内容
-              
-              // 3秒后恢复按钮原样
+              submitBtn.style.backgroundColor = "#28a745";
+              form.reset();
               setTimeout(() => {
                 submitBtn.innerHTML = "Send Inquiry";
                 submitBtn.style.backgroundColor = "#3A824F";
                 submitBtn.disabled = false;
               }, 3000);
           } else {
-              // 发送失败
-              console.log(response);
               submitBtn.innerHTML = "Something went wrong. Try again.";
-              submitBtn.style.backgroundColor = "#dc3545"; // 变成红色
+              submitBtn.style.backgroundColor = "#dc3545";
           }
       })
       .catch(error => {
-          console.log(error);
           submitBtn.innerHTML = "Something went wrong.";
           submitBtn.style.backgroundColor = "#dc3545";
       });
     });
   }
 
-  // ================= 产品卡片一键带入询盘逻辑 =================
+  // 产品卡片带入表单
   const productCards = document.querySelectorAll('.product-card');
   const targetProductInput = document.querySelector('input[name="Target Product"]');
 
   productCards.forEach(card => {
     card.addEventListener('click', function() {
-      // 获取我们在 HTML 里写的 data-product 属性
       const productName = this.getAttribute('data-product');
-      
-      // 将产品名字填入表单的 Target Product 框
       if (targetProductInput && productName) {
         targetProductInput.value = productName;
       }
-
-      // 平滑滚动到底部的表单区域
       const contactSection = document.getElementById('contact');
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });

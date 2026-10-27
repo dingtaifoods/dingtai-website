@@ -19,8 +19,22 @@ import Layout from "../layouts/Layout.astro";
       <div class="header-cta">
         <a href="#contact" class="btn-cta">Get a Quote</a>
       </div>
+      <!-- 手机端汉堡按钮（因为产品页导航默认是白底，所以图标默认黑色） -->
+      <div class="mobile-toggle" id="mobile-toggle" style="display:none;">
+        <span style="background:#333;"></span><span style="background:#333;"></span><span style="background:#333;"></span>
+      </div>
     </div>
   </header>
+
+  <!-- 手机端全屏菜单 -->
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-close" id="mobile-close">&times;</div>
+    <a href="/" class="m-link">Home</a>
+    <a href="/products" class="m-link" style="color:#3A824F;">Products</a>
+    <a href="/#about" class="m-link">About</a>
+    <a href="/#certifications" class="m-link">Certifications</a>
+    <a href="#contact" class="m-link" style="color:#3A824F; font-weight:bold;">Get a Quote</a>
+  </div>
 
   <!-- ================= 2. 页面引导头 ================= -->
   <section class="page-header fade-in">
@@ -133,26 +147,20 @@ import Layout from "../layouts/Layout.astro";
   <section id="contact" class="contact-section">
     <div class="container">
       <div class="contact-grid fade-in">
-        
         <div class="contact-text">
           <span class="section-tag">Get in Touch</span>
           <h2>Ready to request a quote?</h2>
           <p>Please fill out the form with your specific requirements (Product, Quantity, Destination Port). Our sales team will get back to you within 24 hours.</p>
-          
           <div class="contact-direct">
-            <!-- 👇 香港号码已填入 👇 -->
             <p><strong>Direct WhatsApp:</strong> <a href="https://wa.me/85296946564" target="_blank">+852 9694 6564</a></p>
             <p><strong>Email:</strong> sales@dingtaifoods.com</p>
           </div>
         </div>
-
         <div class="contact-form-wrap">
           <form id="inquiryForm" class="inquiry-form">
-            
             <input type="hidden" name="access_key" value="ba9c9dc3-26f2-405b-bdcc-cc2da3fbeaba">
             <input type="hidden" name="subject" value="New Product Page Inquiry from Dingtai Food">
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
             <div class="form-row">
               <input type="text" name="Name" placeholder="Your Name *" required>
               <input type="email" name="Email" placeholder="Your Email *" required>
@@ -162,27 +170,21 @@ import Layout from "../layouts/Layout.astro";
               <input type="text" name="Target Product" placeholder="Target Product">
             </div>
             <textarea name="Message" placeholder="Detailed Requirements (Quantity, Specs, Port)..." rows="4" required></textarea>
-            
             <button type="submit" id="submitBtn" class="btn-submit">Send Inquiry</button>
           </form>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ================= 8. 唯一的高级三列页脚 ================= -->
+  <!-- ================= 8. 页脚 ================= -->
   <footer class="global-footer">
     <div class="container footer-grid">
-      
-      <!-- 第一列：带有 Logo -->
       <div class="footer-col brand-col">
         <img src="/images/logo-white.png" alt="Dingtai Food" class="footer-logo">
         <h4>Yunnan Luoping Dingtai Food Development Co., Ltd.</h4>
         <p>Specialist exporter of Luoping small yellow ginger — dried slices, powder, and organic grades.</p>
       </div>
-
-      <!-- 第二列：快速导航 -->
       <div class="footer-col">
         <h4 class="footer-title">Explore</h4>
         <ul class="footer-links">
@@ -193,22 +195,16 @@ import Layout from "../layouts/Layout.astro";
           <li><a href="/#contact">Contact</a></li>
         </ul>
       </div>
-
-      <!-- 第三列：联系信息 -->
       <div class="footer-col">
         <h4 class="footer-title">Export Office</h4>
         <div class="footer-contact">
           <p>Food Industrial Park, Luoping County,<br>Qujing City, Yunnan Province, P.R. China</p>
           <p><a href="mailto:sales@dingtaifoods.com">sales@dingtaifoods.com</a></p>
-          <!-- 👇 香港号码已填入 👇 -->
           <p>+852 9694 6564 <span style="font-size:0.8rem; color:#3A824F; border:1px solid #3A824F; padding:1px 4px; border-radius:4px; margin-left:5px;">WhatsApp</span></p>
           <p>Mon–Sat, 08:30–18:00 CST (UTC+8)</p>
         </div>
       </div>
-
     </div>
-    
-    <!-- 底部版权 -->
     <div class="container footer-bottom">
       <p>&copy; 2025 Yunnan Luoping Dingtai Food Development Co., Ltd. All rights reserved.</p>
     </div>
@@ -218,21 +214,17 @@ import Layout from "../layouts/Layout.astro";
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
-
   :global(.site-header) { display: none; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { overflow-x: hidden; font-family: 'Inter', sans-serif; color: #333; background: #fff; -webkit-font-smoothing: antialiased; }
   h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
-
   .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
   .bg-light { background-color: #FAFAFA; }
-
-  /* 动画类 */
   .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-  /* 1. 导航 (白底模式) */
+  /* 1. 导航与手机菜单 */
   .global-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 15px 0; background: #fff; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
   .header-wrap { max-width: 1400px; margin: 0 auto; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; }
   .logo img { height: 50px; }
@@ -242,14 +234,20 @@ import Layout from "../layouts/Layout.astro";
   .btn-cta { background: #3A824F; color: #fff; padding: 12px 30px; text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; border-radius: 2px; transition: 0.3s; }
   .btn-cta:hover { background: #2c663d; }
 
+  /* 手机汉堡按钮与全屏菜单 */
+  .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; z-index: 1001; }
+  .mobile-toggle span { width: 25px; height: 2px; background: #333; transition: 0.3s; }
+  .mobile-nav { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: #fff; z-index: 999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.4s; }
+  .mobile-nav.active { right: 0; }
+  .mobile-nav a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #0A1C13; margin: 15px 0; text-transform: uppercase; text-decoration: none; }
+  .mobile-close { position: absolute; top: 20px; right: 25px; font-size: 3rem; color: #333; cursor: pointer; line-height: 1; }
+
   /* 2. 页面引导头 */
   .page-header { padding: 180px 0 60px; text-align: center; background: #F4F7F5; }
   .section-tag { display: block; color: #3A824F; font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
   .page-title { font-size: 4rem; line-height: 1.1; color: #0A1C13; margin-bottom: 25px; }
   .page-desc { color: #666; font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.8; }
-
-  /* 锚点导航 */
-  .anchor-nav { display: flex; justify-content: center; gap: 40px; margin-top: 50px; }
+  .anchor-nav { display: flex; justify-content: center; gap: 40px; margin-top: 50px; flex-wrap: wrap; }
   .anchor-nav a { text-decoration: none; color: #3A824F; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; padding-bottom: 5px; border-bottom: 2px solid transparent; transition: 0.3s; }
   .anchor-nav a:hover { border-bottom-color: #3A824F; }
 
@@ -262,7 +260,7 @@ import Layout from "../layouts/Layout.astro";
   .banner-overlay h2 { color: #fff; font-size: 4rem; margin-bottom: 15px; }
   .banner-overlay p { color: #ddd; font-size: 1.1rem; letter-spacing: 1px; }
 
-  /* 4. 产品网格 (4列极简卡片) */
+  /* 4. 产品网格 */
   .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 20px; }
   .prod-card { background: transparent; text-align: center; transition: 0.4s; padding-bottom: 20px; border-bottom: 1px solid transparent; cursor: pointer; }
   .prod-card:hover { transform: translateY(-8px); border-bottom: 1px solid #3A824F; }
@@ -272,7 +270,7 @@ import Layout from "../layouts/Layout.astro";
   .prod-card:hover .img-box img { transform: scale(1.08); }
   .prod-card h4 { font-family: 'Inter', sans-serif; font-size: 1rem; color: #333; font-weight: 500; letter-spacing: 0.5px; }
 
-  /* ================= 5. 全新极简询盘表单 ================= */
+  /* 5. 询盘表单 */
   .contact-section { padding: 120px 0; background: #F4F7F5; }
   .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 100px; }
   .contact-text h2 { font-size: 3rem; color: #0A1C13; margin-bottom: 25px; line-height: 1.1; }
@@ -281,7 +279,6 @@ import Layout from "../layouts/Layout.astro";
   .contact-direct strong { color: #0A1C13; }
   .contact-direct a { color: #3A824F; text-decoration: none; font-weight: 600; border-bottom: 1px solid #3A824F; transition: 0.3s; }
   .contact-direct a:hover { color: #2c663d; }
-
   .contact-form-wrap { background: #fff; padding: 50px; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
   .inquiry-form { display: flex; flex-direction: column; gap: 25px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
@@ -291,53 +288,60 @@ import Layout from "../layouts/Layout.astro";
   .btn-submit { background: #3A824F; color: #fff; padding: 18px 40px; font-size: 1rem; font-weight: 600; letter-spacing: 1px; border: none; border-radius: 2px; cursor: pointer; transition: 0.3s; margin-top: 10px; }
   .btn-submit:hover { background: #2c663d; }
 
-  /* ================= 6. 高级三列页脚 ================= */
+  /* 6. 页脚 */
   .global-footer { padding: 80px 0 30px; background: #0A1C13; color: #A3B19B; border-top: 1px solid rgba(255,255,255,0.05); }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 60px; margin-bottom: 60px; }
-  
   .footer-logo { height: 45px; margin-bottom: 20px; opacity: 1; }
   .brand-col h4 { color: #fff; font-size: 1.2rem; margin-bottom: 15px; font-family: 'Inter', sans-serif; font-weight: 500; }
   .brand-col p { font-size: 0.95rem; line-height: 1.6; color: #A3B19B; max-width: 350px; }
-
   .footer-title { color: #fff; font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; margin-bottom: 20px; letter-spacing: 1px; }
   .footer-links { list-style: none; }
   .footer-links li { margin-bottom: 12px; }
   .footer-links a { color: #A3B19B; text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
   .footer-links a:hover { color: #3A824F; }
-
   .footer-contact p { font-size: 0.95rem; line-height: 1.8; margin-bottom: 12px; color: #A3B19B; }
   .footer-contact a { color: #A3B19B; text-decoration: none; transition: 0.3s; }
   .footer-contact a:hover { color: #3A824F; }
-
   .footer-bottom { text-align: left; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; }
   .footer-bottom p { font-size: 0.85rem; color: #6B7B72; }
 
-  /* 响应式 */
+  /* ================= 手机端专门优化 ================= */
   @media (max-width: 1200px) {
     .product-grid { grid-template-columns: repeat(3, 1fr); }
   }
   @media (max-width: 992px) {
     .page-title { font-size: 3rem; }
     .main-nav { display: none; }
-    .anchor-nav { flex-wrap: wrap; gap: 20px; }
+    .header-cta { display: none; }
+    .mobile-toggle { display: flex; }
+    .anchor-nav { gap: 20px; }
     .series-banner { height: 350px; margin-bottom: 40px; }
     .banner-overlay { padding: 0 40px; }
     .banner-overlay h2 { font-size: 3rem; }
-    .product-grid { grid-template-columns: repeat(2, 1fr); }
-    
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .contact-grid { grid-template-columns: 1fr; gap: 60px; }
     .contact-form-wrap { padding: 40px 30px; }
     .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    .series-block { padding: 60px 0; }
+    .page-header { padding: 140px 0 40px; }
   }
   @media (max-width: 576px) {
     .page-title { font-size: 2.5rem; }
-    .series-banner { height: 250px; }
+    .page-desc { font-size: 1rem; }
+    .series-banner { height: 250px; margin-bottom: 30px; }
     .banner-overlay { padding: 0 20px; }
     .banner-overlay h2 { font-size: 2rem; }
     .banner-overlay p { font-size: 0.9rem; }
-    .product-grid { grid-template-columns: 1fr; }
     
-    .form-row { grid-template-columns: 1fr; gap: 25px; }
+    /* 产品网格在手机上变成2列，不那么累赘 */
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 15px 10px; }
+    .prod-card { padding-bottom: 10px; }
+    .img-box { margin-bottom: 10px; }
+    .prod-card h4 { font-size: 0.8rem; line-height: 1.3; }
+    
+    .form-row { grid-template-columns: 1fr; gap: 20px; }
+    .contact-section { padding: 80px 0; }
+    .contact-text h2 { font-size: 2.2rem; }
   }
 </style>
 
@@ -355,18 +359,38 @@ import Layout from "../layouts/Layout.astro";
     observer.observe(el);
   });
 
-  // ================= 表单提交逻辑 =================
+  // 移动端菜单开关
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileClose = document.getElementById('mobile-close');
+  const mLinks = document.querySelectorAll('.m-link');
+
+  if(mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+      mobileNav.classList.add('active');
+    });
+  }
+  if(mobileClose) {
+    mobileClose.addEventListener('click', () => {
+      mobileNav.classList.remove('active');
+    });
+  }
+  mLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('active');
+    });
+  });
+
+  // 表单提交逻辑
   const form = document.getElementById('inquiryForm');
   const submitBtn = document.getElementById('submitBtn');
 
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault(); 
-      
       const formData = new FormData(form);
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
-      
       submitBtn.innerHTML = "Sending...";
       submitBtn.disabled = true;
 
@@ -379,43 +403,37 @@ import Layout from "../layouts/Layout.astro";
           body: json
       })
       .then(async (response) => {
-          let json = await response.json();
           if (response.status == 200) {
               submitBtn.innerHTML = "Inquiry Sent Successfully!";
               submitBtn.style.backgroundColor = "#28a745";
               form.reset();
-              
               setTimeout(() => {
                 submitBtn.innerHTML = "Send Inquiry";
                 submitBtn.style.backgroundColor = "#3A824F";
                 submitBtn.disabled = false;
               }, 3000);
           } else {
-              console.log(response);
               submitBtn.innerHTML = "Something went wrong. Try again.";
               submitBtn.style.backgroundColor = "#dc3545";
           }
       })
       .catch(error => {
-          console.log(error);
           submitBtn.innerHTML = "Something went wrong.";
           submitBtn.style.backgroundColor = "#dc3545";
       });
     });
   }
 
-  // ================= 产品一键带入询盘逻辑 =================
+  // 产品一键带入询盘
   const productCards = document.querySelectorAll('.prod-card');
   const targetProductInput = document.querySelector('input[name="Target Product"]');
 
   productCards.forEach(card => {
     card.addEventListener('click', function() {
       const productName = this.getAttribute('data-product');
-      
       if (targetProductInput && productName) {
         targetProductInput.value = productName;
       }
-
       const contactSection = document.getElementById('contact');
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
