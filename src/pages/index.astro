@@ -1,91 +1,557 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ProductCard from "../components/ProductCard.astro";
-import InquiryForm from "../components/InquiryForm.astro";
-import { company, factoryStats, products } from "../data/site";
 ---
 
-<Layout title="Home" description={company.tagline}>
-  <section class="hero">
-    <img
-      class="bg"
-      src="/images/factory-hero.jpg"
-      alt="Highland farmland in Yunnan"
-    />
-    <div class="wrap hero-copy">
-      <p class="kicker">Luoping · Yunnan · China</p >
-      <h1>Premium Dried Ginger &amp; Spices from Yunnan</h1>
-      <p>
-        Direct factory supplier of dried ginger slices, powder, chili, and star anise. We serve importers, tea blenders, and food manufacturers worldwide.
-      </p >
+<Layout title="Bulk Organic Dried Ginger | EU Organic & HACCP | Dingtai">
+  
+  <!-- ================= 1. 极简透明导航 ================= -->
+  <header class="global-header">
+    <div class="header-wrap">
+      <div class="logo">
+        <img src="/images/logo-white.png" alt="Dingtai Food">
+      </div>
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="/products">Products</a>
+        <a href="#organic">Organic</a>
+        <a href="#dehydrated">Dehydrated</a>
+        <a href="#certifications">Certifications</a>
+      </nav>
+      <div class="header-cta">
+        <a href="#contact" class="btn-cta">Get a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 2. 沉浸式首屏 (Hero) ================= -->
+  <section class="hero-section">
+    <div class="hero-slider">
+      <img src="/images/slide-1.jpg" class="hero-bg active" alt="Luoping organic ginger field, Yunnan China" />
+      <img src="/images/slide-2.jpg" class="hero-bg" alt="Dried ginger slices drying yard, Luoping" />
+      <img src="/images/slide-3.jpg" class="hero-bg" alt="Dingtai Food dehydrated vegetable factory, Yunnan" />
+    </div>
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content fade-in">
+      <span class="hero-subtitle">EU / USDA / JAS Organic · Exporting to 40+ Countries</span>
+      <h1 class="hero-title">Organic Dried Ginger Slices<br>& Dehydrated Vegetables.</h1>
+      <p class="hero-desc">Bulk organic dried ginger slices from Luoping, Yunnan — the home of China's best small yellow ginger. EU / USDA organic, HACCP & FSSC 22000 certified. Dried ginger powder and dehydrated vegetables also available.</p>
       <div class="hero-actions">
-        <a class="btn btn-gold" href="/products">Browse products</a >
-        <a class="btn btn-ghost" href="/contact">Talk to export sales</a >
+        <a href="#selected-products" class="btn-primary">Explore Products</a>
+        <a href="https://wa.me/85296946564" target="_blank" class="btn-secondary">Contact Us</a>
       </div>
     </div>
   </section>
 
-  <div class="wrap">
-    <div class="stats">
-      {factoryStats.map((item) => (
-        <div class="stat">
-          <b>{item.value}</b>
-          <span class="muted">{item.label}</span>
+  <!-- ================= 3. 品牌宣言 ================= -->
+  <section class="manifesto-section">
+    <div class="container fade-in">
+      <p class="manifesto-text">
+        We don't just supply spices. We deliver <span>traceable quality</span>, <span>organic integrity</span>, and <span>40 years of agricultural expertise</span> from the source.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= 4. 关于我们 ================= -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <span class="section-tag">Our Heritage</span>
+          <h2>Rooted in Luoping — China's Home of Organic Dried Ginger.</h2>
+          <p>Yunnan boasts one of the richest plant resources globally. With our <strong>10,000 mu organic base</strong> in Luoping—the hometown of Small Yellow Ginger—we control quality from the source. We supply bulk organic dried ginger slices, dried ginger powder and dehydrated vegetables to importers, spice blenders and food manufacturers worldwide.</p>
+          <p>With <strong>40 years of experience</strong>, our 35,000 m² aseptic workshop and international R&D center form a solid foundation for providing you with safe, premium spices. Every shipment of organic dried ginger ships with COA, product specification sheet, phytosanitary certificate and EU/USDA/JAS organic transaction certificates.</p>
+          
+          <div class="stats-row">
+            <div class="stat-item">
+              <span class="stat-num">40+</span>
+              <span class="stat-label">Countries</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">10k</span>
+              <span class="stat-label">Mu Base</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">35k</span>
+              <span class="stat-label">m² Workshop</span>
+            </div>
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-
-  <section class="section">
-    <div class="wrap">
-      <p class="kicker">Why Luoping ginger</p >
-      <div class="grid-2">
-        <div>
-          <h2>A protected origin with a sharp, clean pungency.</h2>
-          <p>
-            Luoping’s small yellow ginger is grown on red-soil highlands with a long dry season. The rhizomes are
-            compact, low in fiber, and rich in essential oil — preferred by tea and extract buyers over larger
-            commercial types.
-          </p >
-          <p>
-            We contract farms around our plant, wash and slice in-house, and dry with both sun yards and air-dryer
-            lines so moisture, color, and SO2 stay inside your spec.
-          </p >
-          <a class="btn btn-primary" href="/factory">See factory capability</a >
+        <div class="about-image fade-in">
+          <img src="/images/map.png" alt="Map of Luoping, Yunnan — origin of Dingtai organic dried ginger" class="map-img" />
         </div>
-        <img
-          class="card"
-          src="/images/factory-logo.jpg"
-          alt="Fresh ginger rhizomes"
-        />
       </div>
     </div>
   </section>
 
-  <section class="section" style="background: var(--paper-2);">
-    <div class="wrap">
-      <p class="kicker">Core range</p >
-      <h2>Explore Our Export Range</h2>
-      <div class="grid-4" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-        {products.map((product) => (
-          <ProductCard product={product} />
-        ))}
+  <!-- ================= 5. 精选产品 (有机系列) ================= -->
+  <section id="selected-products" class="products-section bg-light">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Four-Country Organic Certifications</span>
+        <h2>Organic Dried Ginger &amp; Spice Series</h2>
+        <p>One Item, One Code; Full-process Organic Traceability</p>
+        
+        <div class="organic-logos">
+          <img src="/images/badge-eu.png" class="icon-eu" alt="EU Organic" />
+          <img src="/images/badge-usda.png" class="icon-usda" alt="USDA Organic" />
+          <img src="/images/badge-china.png" class="icon-china" alt="China Organic" />
+          <img src="/images/badge-jas.png" class="icon-jas" alt="JAS Organic" />
+        </div>
+      </div>
+
+      <div class="product-grid fade-in">
+        <!-- 👇 加上了 data-product 属性，方便 JS 抓取名字 👇 -->
+        <div class="product-card" data-product="Organic Ginger Powder">
+          <div class="img-box"><img src="/images/prod-powder.jpg" alt="Bulk organic dried ginger powder 60-80 mesh – EU/USDA organic – Dingtai" /></div>
+          <h4>Organic Ginger Powder</h4>
+        </div>
+        <div class="product-card" data-product="Organic Ginger Slices">
+          <div class="img-box"><img src="/images/prod-slices.jpg" alt="Bulk organic dried ginger slices – EU/USDA/JAS organic, Luoping Yunnan – Dingtai" /></div>
+          <h4>Organic Ginger Slices</h4>
+        </div>
+        <div class="product-card" data-product="Organic Ginger Shreds">
+          <div class="img-box"><img src="/images/prod-shreds.jpg" alt="Organic dried ginger shreds – EU/USDA organic, Luoping Yunnan – Dingtai" /></div>
+          <h4>Organic Ginger Shreds</h4>
+        </div>
+        <div class="product-card" data-product="Organic Ginger Balls">
+          <div class="img-box"><img src="/images/prod-granules.jpg" alt="Organic dried ginger balls – EU organic, Luoping Yunnan – Dingtai" /></div>
+          <h4>Organic Ginger Balls</h4>
+        </div>
+        <div class="product-card" data-product="Organic Turmeric">
+          <div class="img-box"><img src="/images/prod-turmeric.jpg" alt="Organic turmeric powder – EU/USDA organic, Yunnan China – Dingtai" /></div>
+          <h4>Organic Turmeric</h4>
+        </div>
+        <div class="product-card" data-product="Organic Star Anise">
+          <div class="img-box"><img src="/images/prod-star-anise.jpg" alt="Organic star anise – EU/USDA organic, Yunnan China – Dingtai" /></div>
+          <h4>Organic Star Anise</h4>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap grid-2">
-      <div>
-        <p class="kicker">Documents &amp; shipping</p >
-        <h2>Built for overseas procurement teams.</h2>
-        <p>
-          Commercial invoice, packing list, certificate of origin, phytosanitary certificate, and lot COA are
-          prepared with each shipment. Loading is available FOB Shenzhen / Nansha / Shanghai, or CIF to your port.
-        </p >
-        <p>{company.moqNote}</p >
+  <!-- ================= 6. 精选产品 (脱水系列) ================= -->
+  <section id="dehydrated" class="products-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">International Dehydration Technology</span>
+        <h2>Bulk Dehydrated Vegetable Series</h2>
+        <p>Preserve Natural Original Aroma, Superior Rehydration Performance</p>
       </div>
-      <InquiryForm />
+
+      <div class="product-grid dense fade-in">
+        <!-- 👇 同样加上了 data-product 属性 👇 -->
+        <div class="product-card" data-product="Dehydrated Ginger Slices"><div class="img-box"><img src="/images/d-ginger-slices.jpg" alt="Dehydrated ginger slices – HACCP certified, Yunnan China – Dingtai" /></div><h4>Dehydrated Ginger Slices</h4></div>
+        <div class="product-card" data-product="Dehydrated Ginger Chunks"><div class="img-box"><img src="/images/d-ginger-chunks.jpg" alt="Dehydrated ginger chunks – HACCP certified, Yunnan China – Dingtai" /></div><h4>Dehydrated Ginger Chunks</h4></div>
+        <div class="product-card" data-product="Dried Red Chili"><div class="img-box"><img src="/images/d-ginger-granules.jpg" alt="Dried red chili – HACCP certified, Yunnan China – Dingtai" /></div><h4>Dried Red Chili</h4></div>
+        <div class="product-card" data-product="Dehydrated Ginger Powder"><div class="img-box"><img src="/images/d-ginger-powder.jpg" alt="Dehydrated ginger powder – HACCP certified, Yunnan China – Dingtai" /></div><h4>Dehydrated Ginger Powder</h4></div>
+        <div class="product-card" data-product="Dehydrated Garlic Slices"><div class="img-box"><img src="/images/d-garlic-slices.jpg" alt="Dehydrated garlic slices – HACCP certified, Yunnan China – Dingtai" /></div><h4>Dehydrated Garlic Slices</h4></div>
+        <div class="product-card" data-product="Dehydrated Garlic Powder"><div class="img-box"><img src="/images/d-garlic-powder.jpg" alt="Dehydrated garlic powder – HACCP certified, Yunnan China – Dingtai" /></div><h4>Dehydrated Garlic Powder</h4></div>
+        <div class="product-card" data-product="Dehydrated Garlic Granules"><div class="img-box"><img src="/images/d-garlic-granules.jpg" alt="Dehydrated garlic granules – HACCP certified, Yunnan China – Dingtai" /></div><h4>Dehydrated Garlic Granules</h4></div>
+        <div class="product-card" data-product="Dehydrated Onion Powder"><div class="img-box"><img src="/images/d-onion-powder.jpg" alt="Dehydrated onion powder – HACCP certified, Yunnan China – Dingtai" /></div><h4>Dehydrated Onion Powder</h4></div>
+        <div class="product-card" data-product="Dehydrated Onion Granules"><div class="img-box"><img src="/images/d-onion-granules.jpg" alt="Dehydrated onion granules – HACCP certified, Yunnan China – Dingtai" /></div><h4>Dehydrated Onion Granules</h4></div>
+      </div>
+
+      <div class="explore-more-wrap fade-in">
+        <a href="/products" class="btn-explore">
+          <span>Discover Spices, Extracts, Frozen & More</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
     </div>
   </section>
+
+  <!-- ================= 7. 认证墙 ================= -->
+  <section id="certifications" class="cert-section">
+    <div class="container">
+      <div class="cert-card fade-in">
+        <div class="cert-grid-wrap">
+          <div class="cert-intro">
+            <span class="section-tag">World-Class Standards</span>
+            <h2>HACCP, FSSC 22000 & EU Organic Certified Ginger Supplier.</h2>
+            <p>Rooted in Chinese origin standards, aligned with global food codes. We ensure your products meet the strictest international market requirements.</p>
+            <div class="cert-features-list">
+              <span>✔ Organic Base</span>
+              <span>✔ Full-chain Traceability</span>
+              <span>✔ Organic Production & Processing</span>
+            </div>
+            <div class="medal-display">
+              <img src="/images/medal.png" alt="Organic Medal" />
+            </div>
+          </div>
+          <div class="cert-logos-grid">
+            <div class="cert-logo-card"><img src="/images/cert-haccp.jpg" alt="HACCP" /></div>
+            <div class="cert-logo-card"><img src="/images/cert-iso9001.jpg" alt="ISO 9001" /></div>
+            <div class="cert-logo-card"><img src="/images/cert-fssc.jpg" alt="FSSC 22000" /></div>
+            <div class="cert-logo-card"><img src="/images/cert-halal.jpg" alt="HALAL" /></div>
+            <div class="cert-logo-card"><img src="/images/cert-kosher.jpg" alt="Kosher" /></div>
+            <div class="cert-logo-card"><img src="/images/cert-gap.jpg" alt="GAP" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. 询盘表单 ================= -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-grid fade-in">
+        
+        <div class="contact-text">
+          <span class="section-tag">Get in Touch</span>
+          <h2>Ready to request a quote?</h2>
+          <p>Please fill out the form with your specific requirements (Product, Quantity, Destination Port). Our sales team will get back to you within 24 hours.</p>
+          
+          <div class="contact-direct">
+            <p><strong>Direct WhatsApp:</strong> <a href="https://wa.me/85296946564" target="_blank">+852 9694 6564</a></p>
+            <p><strong>Email:</strong> sales@dingtaifoods.com</p>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form id="inquiryForm" class="inquiry-form">
+            
+            <input type="hidden" name="access_key" value="ba9c9dc3-26f2-405b-bdcc-cc2da3fbeaba">
+            <input type="hidden" name="subject" value="New Website Inquiry from Dingtai Food">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <div class="form-row">
+              <input type="text" name="Name" placeholder="Your Name *" required>
+              <input type="email" name="Email" placeholder="Your Email *" required>
+            </div>
+            <div class="form-row">
+              <input type="text" name="Company" placeholder="Company Name">
+              <input type="text" name="Target Product" placeholder="Target Product">
+            </div>
+            <textarea name="Message" placeholder="Detailed Requirements (Quantity, Specs, Port)..." rows="4" required></textarea>
+            
+            <button type="submit" id="submitBtn" class="btn-submit">Send Inquiry</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 9. 唯一的高级三列页脚（已与 products.astro 统一） ================= -->
+  <footer class="global-footer">
+    <div class="container footer-grid">
+      
+      <!-- 第一列：带有 Logo -->
+      <div class="footer-col brand-col">
+        <img src="/images/logo-white.png" alt="Dingtai Food" class="footer-logo">
+        <h4>Yunnan Luoping Dingtai Food Development Co., Ltd.</h4>
+        <p>Specialist exporter of Luoping small yellow ginger — dried slices, powder, and organic grades.</p>
+      </div>
+
+      <!-- 第二列：快速导航 -->
+      <div class="footer-col">
+        <h4 class="footer-title">Explore</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/#about">Factory</a></li>
+          <li><a href="/#certifications">Certificates</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- 第三列：联系信息 -->
+      <div class="footer-col">
+        <h4 class="footer-title">Export Office</h4>
+        <div class="footer-contact">
+          <p>Food Industrial Park, Luoping County,<br>Qujing City, Yunnan Province, P.R. China</p>
+          <p><a href="mailto:sales@dingtaifoods.com">sales@dingtaifoods.com</a></p>
+          <p>+852 9694 6564 <span style="font-size:0.8rem; color:#3A824F; border:1px solid #3A824F; padding:1px 4px; border-radius:4px; margin-left:5px;">WhatsApp</span></p>
+          <p>Mon–Sat, 08:30–18:00 CST (UTC+8)</p>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- 底部版权 -->
+    <div class="container footer-bottom">
+      <p>&copy; 2025 Yunnan Luoping Dingtai Food Development Co., Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
 </Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+  :global(.site-header) { display: none; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { overflow-x: hidden; font-family: 'Inter', sans-serif; color: #333; background: #fff; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+
+  .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
+  .bg-light { background-color: #FAFAFA; }
+
+  /* 动画类 */
+  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* 1. 导航 */
+  .global-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 25px 0; transition: 0.4s; }
+  .global-header.scrolled { background: #fff; padding: 15px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+  .header-wrap { max-width: 1400px; margin: 0 auto; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; }
+  .logo img { height: 50px; }
+  .main-nav { display: flex; gap: 40px; }
+  .main-nav a { text-decoration: none; color: #fff; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+  .global-header.scrolled .main-nav a { color: #333; }
+  .main-nav a:hover { color: #D4AF37; }
+  .btn-cta { background: #3A824F; color: #fff; padding: 12px 30px; text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; border-radius: 2px; transition: 0.3s; }
+  .btn-cta:hover { background: #2c663d; }
+
+  /* 2. 首屏 */
+  .hero-section { position: relative; height: 100vh; width: 100%; display: flex; align-items: center; overflow: hidden; }
+  .hero-slider { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+  .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease-in-out; }
+  .hero-bg.active { opacity: 1; transform: scale(1.05); transition: opacity 1.5s ease-in-out, transform 8s linear; }
+  .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(10,28,19,0.8) 0%, rgba(10,28,19,0.2) 100%); z-index: 2; }
+  
+  .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: 0 auto; padding: 0 5%; width: 100%; padding-top: 80px; }
+  .hero-subtitle { display: block; color: #D4AF37; font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 25px; font-weight: 600; }
+  .hero-title { font-size: 5rem; color: #fff; line-height: 1.1; margin-bottom: 30px; }
+  .hero-desc { color: #ddd; font-size: 1.1rem; max-width: 500px; line-height: 1.7; margin-bottom: 45px; font-weight: 300; }
+  .hero-actions { display: flex; gap: 20px; }
+  .btn-primary { background: #3A824F; color: #fff; padding: 18px 45px; text-decoration: none; font-weight: 600; letter-spacing: 1px; border-radius: 2px; transition: 0.3s; }
+  .btn-primary:hover { background: #2c663d; }
+  .btn-secondary { background: transparent; border: 1px solid #fff; color: #fff; padding: 18px 45px; text-decoration: none; font-weight: 600; letter-spacing: 1px; border-radius: 2px; transition: 0.3s; }
+  .btn-secondary:hover { background: #fff; color: #0A1C13; }
+
+  /* 3. 品牌宣言 */
+  .manifesto-section { padding: 120px 0; background: #fff; text-align: center; }
+  .manifesto-text { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; line-height: 1.5; color: #1A3621; max-width: 1000px; margin: 0 auto; }
+  .manifesto-text span { color: #3A824F; font-style: italic; border-bottom: 1px solid #D4AF37; }
+
+  /* 4. 关于 */
+  .about-section { padding: 150px 0; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+  .section-tag { display: block; color: #3A824F; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+  .about-text h2 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 30px; color: #0A1C13; }
+  .about-text p { color: #666; font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; }
+  .about-text strong { color: #0A1C13; font-weight: 600; }
+  .about-image img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+
+  .stats-row { display: flex; gap: 50px; margin-top: 40px; padding-top: 40px; border-top: 1px solid #eee; }
+  .stat-item { display: flex; flex-direction: column; }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #3A824F; line-height: 1; }
+  .stat-label { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
+
+  /* 5 & 6. 产品 */
+  .products-section { padding: 120px 0; }
+  .section-header { text-align: center; max-width: 700px; margin: 0 auto 80px; }
+  .section-header h2 { font-size: 3.2rem; color: #0A1C13; margin-bottom: 15px; }
+  .section-header p { color: #666; font-size: 1.05rem; }
+  
+  .organic-logos { display: flex; justify-content: center; gap: 25px; margin-top: 40px; }
+  .icon-eu { height: 45px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); transition: 0.3s; position: relative; top: 0px; left: 0px; }
+  .icon-usda { height: 70px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); transition: 0.3s; position: relative; top: -10px; left: 18px; }
+  .icon-china { height: 78px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); transition: 0.3s; position: relative; top: -12px; left: 18px; }
+  .icon-jas { height: 80px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); transition: 0.3s; position: relative; top: -15px; left: 0px; }
+  .icon-eu:hover, .icon-usda:hover, .icon-china:hover, .icon-jas:hover { transform: translateY(-5px); }
+
+  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px 30px; }
+  .product-grid.dense { grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  
+  /* 👇 鼠标悬停变成小手，增加点击欲望 👇 */
+  .product-card { background: #fff; text-align: center; transition: 0.4s; border-radius: 4px; padding-bottom: 20px; cursor: pointer; }
+  
+  .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+  .img-box { width: 100%; aspect-ratio: 1/1; border-radius: 4px; overflow: hidden; margin-bottom: 20px; background: #FAFAFA; display: flex; justify-content: center; align-items: center; }
+  .img-box img { width: 80%; height: 80%; object-fit: contain; transition: 0.4s; }
+  .product-card:hover .img-box img { transform: scale(1.08); }
+  .product-card h4 { font-family: 'Inter', sans-serif; font-size: 1rem; color: #333; font-weight: 500; letter-spacing: 0.5px; }
+
+  .explore-more-wrap { text-align: center; margin-top: 80px; }
+  .btn-explore { display: inline-flex; align-items: center; gap: 15px; background: transparent; border: 1px solid #3A824F; color: #3A824F; padding: 18px 40px; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; border-radius: 4px; transition: 0.3s; }
+  .btn-explore:hover { background: #3A824F; color: #fff; }
+  .btn-explore svg { transition: 0.3s; }
+  .btn-explore:hover svg { transform: translateX(5px); }
+
+  /* 7. 认证 */
+  .cert-section { padding: 120px 0; background: #F4F7F5; }
+  .cert-card { background: #fff; border-radius: 8px; padding: 80px; box-shadow: 0 20px 60px rgba(0,0,0,0.03); }
+  .cert-grid-wrap { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: center; }
+  .cert-intro h2 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 25px; color: #0A1C13; }
+  .cert-intro p { color: #666; font-size: 1.05rem; line-height: 1.8; margin-bottom: 35px; }
+  .cert-features-list { display: flex; flex-direction: column; gap: 15px; margin-bottom: 50px; }
+  .cert-features-list span { color: #3A824F; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px; }
+  .medal-display img { width: 200px; height: auto; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); }
+  .cert-logos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .cert-logo-card { background: #FAFAFA; padding: 20px; border-radius: 4px; display: flex; justify-content: center; align-items: center; transition: 0.3s; border: 1px solid #eee; }
+  .cert-logo-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-color: #ddd; }
+  .cert-logo-card img { width: 100%; height: auto; max-height: 160px; object-fit: contain; }
+
+  /* ================= 8. 全新极简询盘表单 ================= */
+  .contact-section { padding: 120px 0; background: #F4F7F5; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 100px; }
+  .contact-text h2 { font-size: 3rem; color: #0A1C13; margin-bottom: 25px; line-height: 1.1; }
+  .contact-text p { color: #666; font-size: 1.05rem; line-height: 1.8; margin-bottom: 40px; }
+  .contact-direct p { color: #333; font-size: 1rem; margin-bottom: 10px; }
+  .contact-direct strong { color: #0A1C13; }
+  .contact-direct a { color: #3A824F; text-decoration: none; font-weight: 600; border-bottom: 1px solid #3A824F; transition: 0.3s; }
+  .contact-direct a:hover { color: #2c663d; }
+
+  .contact-form-wrap { background: #fff; padding: 50px; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+  .inquiry-form { display: flex; flex-direction: column; gap: 25px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+  .inquiry-form input, .inquiry-form textarea { width: 100%; padding: 15px 0; border: none; border-bottom: 1px solid #ddd; font-family: 'Inter', sans-serif; font-size: 1rem; color: #333; background: transparent; outline: none; transition: 0.3s; }
+  .inquiry-form input:focus, .inquiry-form textarea:focus { border-bottom-color: #3A824F; }
+  .inquiry-form textarea { resize: vertical; }
+  .btn-submit { background: #3A824F; color: #fff; padding: 18px 40px; font-size: 1rem; font-weight: 600; letter-spacing: 1px; border: none; border-radius: 2px; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+  .btn-submit:hover { background: #2c663d; }
+
+  /* ================= 9. 高级三列页脚（与 products.astro 完全一致） ================= */
+  .global-footer { padding: 80px 0 30px; background: #0A1C13; color: #A3B19B; border-top: 1px solid rgba(255,255,255,0.05); }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 60px; margin-bottom: 60px; }
+  
+  .footer-logo { height: 45px; margin-bottom: 20px; opacity: 1; }
+  .brand-col h4 { color: #fff; font-size: 1.2rem; margin-bottom: 15px; font-family: 'Inter', sans-serif; font-weight: 500; }
+  .brand-col p { font-size: 0.95rem; line-height: 1.6; color: #A3B19B; max-width: 350px; }
+
+  .footer-title { color: #fff; font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; margin-bottom: 20px; letter-spacing: 1px; }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 12px; }
+  .footer-links a { color: #A3B19B; text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+  .footer-links a:hover { color: #3A824F; }
+
+  .footer-contact p { font-size: 0.95rem; line-height: 1.8; margin-bottom: 12px; color: #A3B19B; }
+  .footer-contact a { color: #A3B19B; text-decoration: none; transition: 0.3s; }
+  .footer-contact a:hover { color: #3A824F; }
+
+  .footer-bottom { text-align: left; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; }
+  .footer-bottom p { font-size: 0.85rem; color: #6B7B72; }
+
+  /* 响应式 */
+  @media (max-width: 992px) {
+    .hero-title { font-size: 3.5rem; }
+    .manifesto-text { font-size: 2rem; }
+    .about-grid, .cert-grid-wrap, .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+    .cert-card { padding: 40px; }
+    .contact-form-wrap { padding: 40px 30px; }
+    .stats-row { justify-content: space-between; }
+    .product-grid, .product-grid.dense { grid-template-columns: repeat(2, 1fr); }
+    .main-nav { display: none; }
+    .cert-logos-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 576px) {
+    .hero-title { font-size: 2.8rem; }
+    .hero-actions { flex-direction: column; }
+    .product-grid, .product-grid.dense { grid-template-columns: 1fr; }
+    .cert-logos-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; gap: 25px; }
+  }
+</style>
+
+<script>
+  // 导航栏滚动特效
+  const header = document.querySelector(".global-header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+
+  // 首屏淡入淡出轮播
+  const slides = document.querySelectorAll('.hero-bg');
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000);
+
+  // 滚动淡入动画
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach((el) => {
+    observer.observe(el);
+  });
+
+  // ================= 表单提交逻辑 =================
+  const form = document.getElementById('inquiryForm');
+  const submitBtn = document.getElementById('submitBtn');
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // 阻止页面跳转刷新
+      
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      
+      submitBtn.innerHTML = "Sending..."; // 按钮变成发送中
+      submitBtn.disabled = true;
+
+      fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+          body: json
+      })
+      .then(async (response) => {
+          let json = await response.json();
+          if (response.status == 200) {
+              // 发送成功
+              submitBtn.innerHTML = "Inquiry Sent Successfully!";
+              submitBtn.style.backgroundColor = "#28a745"; // 变成绿色
+              form.reset(); // 清空表单内容
+              
+              // 3秒后恢复按钮原样
+              setTimeout(() => {
+                submitBtn.innerHTML = "Send Inquiry";
+                submitBtn.style.backgroundColor = "#3A824F";
+                submitBtn.disabled = false;
+              }, 3000);
+          } else {
+              // 发送失败
+              console.log(response);
+              submitBtn.innerHTML = "Something went wrong. Try again.";
+              submitBtn.style.backgroundColor = "#dc3545"; // 变成红色
+          }
+      })
+      .catch(error => {
+          console.log(error);
+          submitBtn.innerHTML = "Something went wrong.";
+          submitBtn.style.backgroundColor = "#dc3545";
+      });
+    });
+  }
+
+  // ================= 产品卡片一键带入询盘逻辑 =================
+  const productCards = document.querySelectorAll('.product-card');
+  const targetProductInput = document.querySelector('input[name="Target Product"]');
+
+  productCards.forEach(card => {
+    card.addEventListener('click', function() {
+      // 获取我们在 HTML 里写的 data-product 属性
+      const productName = this.getAttribute('data-product');
+      
+      // 将产品名字填入表单的 Target Product 框
+      if (targetProductInput && productName) {
+        targetProductInput.value = productName;
+      }
+
+      // 平滑滚动到底部的表单区域
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>

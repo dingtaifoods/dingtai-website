@@ -1,28 +1,425 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ProductCard from "../components/ProductCard.astro";
-import { products } from "../data/site";
 ---
 
-<Layout
-  title="Products"
-  description="Dried ginger slices, ginger powder, and organic ginger from Luoping, Yunnan."
->
-  <section class="page-hero">
-    <div class="wrap">
-      <p class="kicker">Products</p>
-      <h1>Luoping ginger, specified for industrial buyers.</h1>
-      <p>
-        Choose a form, then send cut size, mesh, moisture, and packing. Custom private-label packing is available
-        for established programs.
-      </p>
+<Layout title="Full Product Lines | Dingtai Food">
+  
+  <!-- ================= 1. 极简白底导航 ================= -->
+  <header class="global-header scrolled">
+    <div class="header-wrap">
+      <div class="logo">
+        <img src="/images/logo-white.png" alt="Dingtai Food" style="filter: invert(1) brightness(0.2);">
+      </div>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/products" style="color: #3A824F; font-weight: 700;">Products</a>
+        <a href="/#about">About</a>
+        <a href="/#certifications">Certifications</a>
+      </nav>
+      <div class="header-cta">
+        <a href="#contact" class="btn-cta">Get a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 2. 页面引导头 ================= -->
+  <section class="page-header fade-in">
+    <div class="container">
+      <span class="section-tag">Our Full Product Lines</span>
+      <h1 class="page-title">Specified for Industrial Buyers.</h1>
+      <p class="page-desc">From raw spices to advanced extracts and frozen vegetables, we provide full-chain sourcing, custom sizes, and OEM/ODM private-label packing for global markets.</p>
+      
+      <div class="anchor-nav">
+        <a href="#spices">Spice Series</a>
+        <a href="#extracts">Extract Series</a>
+        <a href="#frozen">Frozen Series</a>
+        <a href="#preservation">Preservation Series</a>
+      </div>
     </div>
   </section>
-  <section class="section">
-    <div class="wrap grid-3">
-      {products.map((product) => (
-        <ProductCard product={product} />
-      ))}
+
+  <!-- ================= 3. 香辛料系列 ================= -->
+  <section id="spices" class="series-block fade-in">
+    <div class="container">
+      <div class="series-banner">
+        <img src="/images/cat-spice-banner.jpg" alt="Spice Series" />
+        <div class="banner-overlay">
+          <h2>Spice Series</h2>
+          <p>Selected Plateau Raw Materials · Rich & Consistent Spicy Aroma</p>
+        </div>
+      </div>
+      
+      <div class="product-grid">
+        <div class="prod-card" data-product="Star Anise"><div class="img-box"><img src="/images/spice-star-anise.jpg" alt="Star Anise" /></div><h4>Star Anise</h4></div>
+        <div class="prod-card" data-product="Cinnamon"><div class="img-box"><img src="/images/spice-cinnamon.jpg" alt="Cinnamon" /></div><h4>Cinnamon</h4></div>
+        <div class="prod-card" data-product="Galangal"><div class="img-box"><img src="/images/spice-galangal.jpg" alt="Galangal" /></div><h4>Galangal</h4></div>
+        <div class="prod-card" data-product="Turmeric"><div class="img-box"><img src="/images/spice-turmeric.jpg" alt="Turmeric" /></div><h4>Turmeric</h4></div>
+        <div class="prod-card" data-product="Cloves"><div class="img-box"><img src="/images/spice-cloves.jpg" alt="Cloves" /></div><h4>Cloves</h4></div>
+        <div class="prod-card" data-product="Dried Ginger"><div class="img-box"><img src="/images/spice-dried-ginger.jpg" alt="Dried Ginger" /></div><h4>Dried Ginger</h4></div>
+        <div class="prod-card" data-product="Chili"><div class="img-box"><img src="/images/spice-chili.jpg" alt="Chili" /></div><h4>Chili</h4></div>
+      </div>
     </div>
   </section>
+
+  <!-- ================= 4. 提取物系列 ================= -->
+  <section id="extracts" class="series-block bg-light fade-in">
+    <div class="container">
+      <div class="series-banner">
+        <img src="/images/cat-extract-banner.jpg" alt="Extract Series" />
+        <div class="banner-overlay">
+          <h2>Extract Series</h2>
+          <p>Enriched Active Ingredients · Empower Diverse Applications</p>
+        </div>
+      </div>
+      
+      <div class="product-grid">
+        <div class="prod-card" data-product="Ginger Oleoresin"><div class="img-box"><img src="/images/extract-ginger-oleoresin.jpg" alt="Ginger Oleoresin" /></div><h4>Ginger Oleoresin</h4></div>
+        <div class="prod-card" data-product="Gingerol"><div class="img-box"><img src="/images/extract-gingerol.jpg" alt="Gingerol" /></div><h4>Gingerol</h4></div>
+        <div class="prod-card" data-product="Ginger Essential Oil"><div class="img-box"><img src="/images/extract-ginger-oil.jpg" alt="Ginger Essential Oil" /></div><h4>Ginger Essential Oil</h4></div>
+        <div class="prod-card" data-product="Concentrated Ginger Juice"><div class="img-box"><img src="/images/extract-ginger-juice.jpg" alt="Concentrated Ginger Juice" /></div><h4>Concentrated Ginger Juice</h4></div>
+        <div class="prod-card" data-product="Turmeric Oleoresin"><div class="img-box"><img src="/images/extract-turmeric-oleoresin.jpg" alt="Turmeric Oleoresin" /></div><h4>Turmeric Oleoresin</h4></div>
+        <div class="prod-card" data-product="Capsicum Oleoresin"><div class="img-box"><img src="/images/extract-capsicum-oleoresin.jpg" alt="Capsicum Oleoresin" /></div><h4>Capsicum Oleoresin</h4></div>
+        <div class="prod-card" data-product="Natural Capsaicin"><div class="img-box"><img src="/images/extract-natural-capsaicin.jpg" alt="Natural Capsaicin" /></div><h4>Natural Capsaicin</h4></div>
+        <div class="prod-card" data-product="Cinnamon Oil"><div class="img-box"><img src="/images/extract-cinnamon-oil.jpg" alt="Cinnamon Oil" /></div><h4>Cinnamon Oil</h4></div>
+        <div class="prod-card" data-product="Litsea Cubeba Oil"><div class="img-box"><img src="/images/extract-litsea-cubeba-oil.jpg" alt="Litsea Cubeba Oil" /></div><h4>Litsea Cubeba Oil</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. 速冻系列 ================= -->
+  <section id="frozen" class="series-block fade-in">
+    <div class="container">
+      <div class="series-banner">
+        <img src="/images/cat-frozen-banner.jpg" alt="Frozen Series" />
+        <div class="banner-overlay">
+          <h2>Frozen Series</h2>
+          <p>Low-Temperature Flash Freezing · Preserve Original Fresh Flavor</p>
+        </div>
+      </div>
+      
+      <div class="product-grid">
+        <div class="prod-card" data-product="Frozen Ginger Chunks"><div class="img-box"><img src="/images/frozen-ginger-chunks.jpg" alt="Frozen Ginger Chunks" /></div><h4>Frozen Ginger Chunks</h4></div>
+        <div class="prod-card" data-product="Frozen Garlic Cloves"><div class="img-box"><img src="/images/frozen-garlic-cloves.jpg" alt="Frozen Garlic Cloves" /></div><h4>Frozen Garlic Cloves</h4></div>
+        <div class="prod-card" data-product="Ginger Puree"><div class="img-box"><img src="/images/ginger-puree.jpg" alt="Ginger Puree" /></div><h4>Ginger Puree</h4></div>
+        <div class="prod-card" data-product="Garlic Puree"><div class="img-box"><img src="/images/garlic-puree.jpg" alt="Garlic Puree" /></div><h4>Garlic Puree</h4></div>
+        <div class="prod-card" data-product="Frozen Green Peas"><div class="img-box"><img src="/images/frozen-green-peas.jpg" alt="Frozen Green Peas" /></div><h4>Frozen Green Peas</h4></div>
+        <div class="prod-card" data-product="Frozen Chestnut"><div class="img-box"><img src="/images/frozen-chestnut.jpg" alt="Frozen Chestnut" /></div><h4>Frozen Chestnut</h4></div>
+        <div class="prod-card" data-product="Frozen Sweet Corn"><div class="img-box"><img src="/images/frozen-sweet-corn.jpg" alt="Frozen Sweet Corn" /></div><h4>Frozen Sweet Corn</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. 保鲜系列 ================= -->
+  <section id="preservation" class="series-block bg-light fade-in">
+    <div class="container">
+      <div class="series-banner">
+        <img src="/images/cat-preservation-banner.jpg" alt="Preservation Series" />
+        <div class="banner-overlay">
+          <h2>Preservation Series</h2>
+          <p>Fresh Produce Lock in Technology · Retain Natural Original Taste</p>
+        </div>
+      </div>
+      
+      <div class="product-grid">
+        <div class="prod-card" data-product="Fresh Ginger"><div class="img-box"><img src="/images/fresh-ginger.jpg" alt="Fresh Ginger" /></div><h4>Fresh Ginger</h4></div>
+        <div class="prod-card" data-product="Fresh Garlic"><div class="img-box"><img src="/images/fresh-garlic.jpg" alt="Fresh Garlic" /></div><h4>Fresh Garlic</h4></div>
+        <div class="prod-card" data-product="Fresh Onion"><div class="img-box"><img src="/images/fresh-onion.jpg" alt="Fresh Onion" /></div><h4>Fresh Onion</h4></div>
+        <div class="prod-card" data-product="Fresh Potato"><div class="img-box"><img src="/images/fresh-potato.jpg" alt="Fresh Potato" /></div><h4>Fresh Potato</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. 询盘表单 ================= -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-grid fade-in">
+        
+        <div class="contact-text">
+          <span class="section-tag">Get in Touch</span>
+          <h2>Ready to request a quote?</h2>
+          <p>Please fill out the form with your specific requirements (Product, Quantity, Destination Port). Our sales team will get back to you within 24 hours.</p>
+          
+          <div class="contact-direct">
+            <!-- 👇 香港号码已填入 👇 -->
+            <p><strong>Direct WhatsApp:</strong> <a href="https://wa.me/85296946564" target="_blank">+852 9694 6564</a></p>
+            <p><strong>Email:</strong> sales@dingtaifoods.com</p>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form id="inquiryForm" class="inquiry-form">
+            
+            <input type="hidden" name="access_key" value="ba9c9dc3-26f2-405b-bdcc-cc2da3fbeaba">
+            <input type="hidden" name="subject" value="New Product Page Inquiry from Dingtai Food">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <div class="form-row">
+              <input type="text" name="Name" placeholder="Your Name *" required>
+              <input type="email" name="Email" placeholder="Your Email *" required>
+            </div>
+            <div class="form-row">
+              <input type="text" name="Company" placeholder="Company Name">
+              <input type="text" name="Target Product" placeholder="Target Product">
+            </div>
+            <textarea name="Message" placeholder="Detailed Requirements (Quantity, Specs, Port)..." rows="4" required></textarea>
+            
+            <button type="submit" id="submitBtn" class="btn-submit">Send Inquiry</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. 唯一的高级三列页脚 ================= -->
+  <footer class="global-footer">
+    <div class="container footer-grid">
+      
+      <!-- 第一列：带有 Logo -->
+      <div class="footer-col brand-col">
+        <img src="/images/logo-white.png" alt="Dingtai Food" class="footer-logo">
+        <h4>Yunnan Luoping Dingtai Food Development Co., Ltd.</h4>
+        <p>Specialist exporter of Luoping small yellow ginger — dried slices, powder, and organic grades.</p>
+      </div>
+
+      <!-- 第二列：快速导航 -->
+      <div class="footer-col">
+        <h4 class="footer-title">Explore</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/#about">Factory</a></li>
+          <li><a href="/#certifications">Certificates</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- 第三列：联系信息 -->
+      <div class="footer-col">
+        <h4 class="footer-title">Export Office</h4>
+        <div class="footer-contact">
+          <p>Food Industrial Park, Luoping County,<br>Qujing City, Yunnan Province, P.R. China</p>
+          <p><a href="mailto:sales@dingtaifoods.com">sales@dingtaifoods.com</a></p>
+          <!-- 👇 香港号码已填入 👇 -->
+          <p>+852 9694 6564 <span style="font-size:0.8rem; color:#3A824F; border:1px solid #3A824F; padding:1px 4px; border-radius:4px; margin-left:5px;">WhatsApp</span></p>
+          <p>Mon–Sat, 08:30–18:00 CST (UTC+8)</p>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- 底部版权 -->
+    <div class="container footer-bottom">
+      <p>&copy; 2025 Yunnan Luoping Dingtai Food Development Co., Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
 </Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+  :global(.site-header) { display: none; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { overflow-x: hidden; font-family: 'Inter', sans-serif; color: #333; background: #fff; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+
+  .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
+  .bg-light { background-color: #FAFAFA; }
+
+  /* 动画类 */
+  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* 1. 导航 (白底模式) */
+  .global-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 15px 0; background: #fff; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+  .header-wrap { max-width: 1400px; margin: 0 auto; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; }
+  .logo img { height: 50px; }
+  .main-nav { display: flex; gap: 40px; }
+  .main-nav a { text-decoration: none; color: #333; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+  .main-nav a:hover { color: #3A824F; }
+  .btn-cta { background: #3A824F; color: #fff; padding: 12px 30px; text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; border-radius: 2px; transition: 0.3s; }
+  .btn-cta:hover { background: #2c663d; }
+
+  /* 2. 页面引导头 */
+  .page-header { padding: 180px 0 60px; text-align: center; background: #F4F7F5; }
+  .section-tag { display: block; color: #3A824F; font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+  .page-title { font-size: 4rem; line-height: 1.1; color: #0A1C13; margin-bottom: 25px; }
+  .page-desc { color: #666; font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.8; }
+
+  /* 锚点导航 */
+  .anchor-nav { display: flex; justify-content: center; gap: 40px; margin-top: 50px; }
+  .anchor-nav a { text-decoration: none; color: #3A824F; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; padding-bottom: 5px; border-bottom: 2px solid transparent; transition: 0.3s; }
+  .anchor-nav a:hover { border-bottom-color: #3A824F; }
+
+  /* 3. 系列通用布局 */
+  .series-block { padding: 100px 0; }
+  .series-banner { position: relative; width: 100%; height: 450px; border-radius: 8px; overflow: hidden; margin-bottom: 60px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+  .series-banner img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; }
+  .series-banner:hover img { transform: scale(1.03); }
+  .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(10,28,19,0.85) 0%, rgba(10,28,19,0.1) 100%); display: flex; flex-direction: column; justify-content: center; padding: 0 80px; }
+  .banner-overlay h2 { color: #fff; font-size: 4rem; margin-bottom: 15px; }
+  .banner-overlay p { color: #ddd; font-size: 1.1rem; letter-spacing: 1px; }
+
+  /* 4. 产品网格 (4列极简卡片) */
+  .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 20px; }
+  .prod-card { background: transparent; text-align: center; transition: 0.4s; padding-bottom: 20px; border-bottom: 1px solid transparent; cursor: pointer; }
+  .prod-card:hover { transform: translateY(-8px); border-bottom: 1px solid #3A824F; }
+  .img-box { width: 100%; aspect-ratio: 1/1; border-radius: 50%; overflow: hidden; margin-bottom: 20px; background: #fff; display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 25px rgba(0,0,0,0.04); border: 1px solid #eee; transition: 0.4s; }
+  .prod-card:hover .img-box { box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: #3A824F; }
+  .img-box img { width: 85%; height: 85%; object-fit: contain; transition: 0.4s; }
+  .prod-card:hover .img-box img { transform: scale(1.08); }
+  .prod-card h4 { font-family: 'Inter', sans-serif; font-size: 1rem; color: #333; font-weight: 500; letter-spacing: 0.5px; }
+
+  /* ================= 5. 全新极简询盘表单 ================= */
+  .contact-section { padding: 120px 0; background: #F4F7F5; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 100px; }
+  .contact-text h2 { font-size: 3rem; color: #0A1C13; margin-bottom: 25px; line-height: 1.1; }
+  .contact-text p { color: #666; font-size: 1.05rem; line-height: 1.8; margin-bottom: 40px; }
+  .contact-direct p { color: #333; font-size: 1rem; margin-bottom: 10px; }
+  .contact-direct strong { color: #0A1C13; }
+  .contact-direct a { color: #3A824F; text-decoration: none; font-weight: 600; border-bottom: 1px solid #3A824F; transition: 0.3s; }
+  .contact-direct a:hover { color: #2c663d; }
+
+  .contact-form-wrap { background: #fff; padding: 50px; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+  .inquiry-form { display: flex; flex-direction: column; gap: 25px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+  .inquiry-form input, .inquiry-form textarea { width: 100%; padding: 15px 0; border: none; border-bottom: 1px solid #ddd; font-family: 'Inter', sans-serif; font-size: 1rem; color: #333; background: transparent; outline: none; transition: 0.3s; }
+  .inquiry-form input:focus, .inquiry-form textarea:focus { border-bottom-color: #3A824F; }
+  .inquiry-form textarea { resize: vertical; }
+  .btn-submit { background: #3A824F; color: #fff; padding: 18px 40px; font-size: 1rem; font-weight: 600; letter-spacing: 1px; border: none; border-radius: 2px; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+  .btn-submit:hover { background: #2c663d; }
+
+  /* ================= 6. 高级三列页脚 ================= */
+  .global-footer { padding: 80px 0 30px; background: #0A1C13; color: #A3B19B; border-top: 1px solid rgba(255,255,255,0.05); }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 60px; margin-bottom: 60px; }
+  
+  .footer-logo { height: 45px; margin-bottom: 20px; opacity: 1; }
+  .brand-col h4 { color: #fff; font-size: 1.2rem; margin-bottom: 15px; font-family: 'Inter', sans-serif; font-weight: 500; }
+  .brand-col p { font-size: 0.95rem; line-height: 1.6; color: #A3B19B; max-width: 350px; }
+
+  .footer-title { color: #fff; font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; margin-bottom: 20px; letter-spacing: 1px; }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 12px; }
+  .footer-links a { color: #A3B19B; text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+  .footer-links a:hover { color: #3A824F; }
+
+  .footer-contact p { font-size: 0.95rem; line-height: 1.8; margin-bottom: 12px; color: #A3B19B; }
+  .footer-contact a { color: #A3B19B; text-decoration: none; transition: 0.3s; }
+  .footer-contact a:hover { color: #3A824F; }
+
+  .footer-bottom { text-align: left; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; }
+  .footer-bottom p { font-size: 0.85rem; color: #6B7B72; }
+
+  /* 响应式 */
+  @media (max-width: 1200px) {
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 992px) {
+    .page-title { font-size: 3rem; }
+    .main-nav { display: none; }
+    .anchor-nav { flex-wrap: wrap; gap: 20px; }
+    .series-banner { height: 350px; margin-bottom: 40px; }
+    .banner-overlay { padding: 0 40px; }
+    .banner-overlay h2 { font-size: 3rem; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    
+    .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+    .contact-form-wrap { padding: 40px 30px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 576px) {
+    .page-title { font-size: 2.5rem; }
+    .series-banner { height: 250px; }
+    .banner-overlay { padding: 0 20px; }
+    .banner-overlay h2 { font-size: 2rem; }
+    .banner-overlay p { font-size: 0.9rem; }
+    .product-grid { grid-template-columns: 1fr; }
+    
+    .form-row { grid-template-columns: 1fr; gap: 25px; }
+  }
+</style>
+
+<script>
+  // 滚动淡入动画
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach((el) => {
+    observer.observe(el);
+  });
+
+  // ================= 表单提交逻辑 =================
+  const form = document.getElementById('inquiryForm');
+  const submitBtn = document.getElementById('submitBtn');
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); 
+      
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      
+      submitBtn.innerHTML = "Sending...";
+      submitBtn.disabled = true;
+
+      fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+          body: json
+      })
+      .then(async (response) => {
+          let json = await response.json();
+          if (response.status == 200) {
+              submitBtn.innerHTML = "Inquiry Sent Successfully!";
+              submitBtn.style.backgroundColor = "#28a745";
+              form.reset();
+              
+              setTimeout(() => {
+                submitBtn.innerHTML = "Send Inquiry";
+                submitBtn.style.backgroundColor = "#3A824F";
+                submitBtn.disabled = false;
+              }, 3000);
+          } else {
+              console.log(response);
+              submitBtn.innerHTML = "Something went wrong. Try again.";
+              submitBtn.style.backgroundColor = "#dc3545";
+          }
+      })
+      .catch(error => {
+          console.log(error);
+          submitBtn.innerHTML = "Something went wrong.";
+          submitBtn.style.backgroundColor = "#dc3545";
+      });
+    });
+  }
+
+  // ================= 产品一键带入询盘逻辑 =================
+  const productCards = document.querySelectorAll('.prod-card');
+  const targetProductInput = document.querySelector('input[name="Target Product"]');
+
+  productCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const productName = this.getAttribute('data-product');
+      
+      if (targetProductInput && productName) {
+        targetProductInput.value = productName;
+      }
+
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
