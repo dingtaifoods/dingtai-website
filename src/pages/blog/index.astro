@@ -13,7 +13,7 @@ const posts = (await getCollection('blog')).sort(
     
     <div style="display: grid; gap: 30px;">
       {posts.map((post) => (
-        <a href={`/blog/${post.slug}`} style="display: block; padding: 30px; background: #FAFAFA; border-radius: 8px; text-decoration: none; transition: 0.3s; border: 1px solid #eee;">
+        <a href={`/blog/${post.id}`} style="display: block; padding: 30px; background: #FAFAFA; border-radius: 8px; text-decoration: none; transition: 0.3s; border: 1px solid #eee;">
           <h2 style="color: #3A824F; margin-bottom: 10px; font-family: 'Cormorant Garamond', serif; font-size: 2rem;">{post.data.title}</h2>
           <p style="color: #666; line-height: 1.6;">{post.data.description}</p>
           <p style="color: #999; font-size: 0.8rem; margin-top: 15px;">Published: {post.data.publishedDate.toLocaleDateString()}</p>

@@ -1,17 +1,17 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content'; // v6 必须这样导入 render
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id }, // v6 里用 post.id 代替了 post.slug
     props: post,
   }));
 }
 
 const post = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post); // v6 的渲染方式
 ---
 
 <Layout title={`${post.data.title} | Dingtai Food`}>
