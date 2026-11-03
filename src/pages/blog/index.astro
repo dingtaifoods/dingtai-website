@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
+);
+---
+
+<Layout title="Blog & Insights | Dingtai Food">
+  <section style="padding: 150px 5% 80px; max-width: 1000px; margin: 0 auto;">
+    <h1 style="font-size: 3rem; margin-bottom: 40px; color: #0A1C13; font-family: 'Cormorant Garamond', serif;">Industry Insights</h1>
+    
+    <div style="display: grid; gap: 30px;">
+      {posts.map((post) => (
+        <a href={`/blog/${post.slug}`} style="display: block; padding: 30px; background: #FAFAFA; border-radius: 8px; text-decoration: none; transition: 0.3s; border: 1px solid #eee;">
+          <h2 style="color: #3A824F; margin-bottom: 10px; font-family: 'Cormorant Garamond', serif; font-size: 2rem;">{post.data.title}</h2>
+          <p style="color: #666; line-height: 1.6;">{post.data.description}</p>
+          <p style="color: #999; font-size: 0.8rem; margin-top: 15px;">Published: {post.data.publishedDate.toLocaleDateString()}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>
